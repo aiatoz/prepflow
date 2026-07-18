@@ -1,0 +1,35 @@
+{
+  "ml": [
+    "Statistics",
+    "Bias-Variance",
+    "Linear Regression",
+    "Logistic Regression",
+    "Decision Trees",
+    "Random Forest",
+    "XGBoost",
+    "KNN",
+    "PCA",
+    "KMeans",
+    "DBSCAN",
+    "Feature Engineering",
+    "Optimization"
+  ],
+  "dl": [
+    "Gradient Descent",
+    "Backpropagation",
+    "Initialization",
+    "Batch Normalization",
+    "Layer Normalization",
+    "CNN",
+    "Attention",
+    "Transformers"
+  ],
+  "llm": [
+    "RAG",
+    "Embeddings",
+    "Vector Databases",
+    "LoRA",
+    "KV Cache",
+    "Mixture of Experts"
+  ]
+}

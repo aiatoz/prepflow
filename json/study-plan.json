@@ -1,0 +1,347 @@
+{
+  "1": {
+    "dsa": {
+      "topic": "Arrays & Hash Maps",
+      "questions": [
+        "Two Sum",
+        "Contains Duplicate",
+        "Product of Array Except Self",
+        "Top K Frequent Elements",
+        "Encode and Decode Strings"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "ER Diagram",
+      "Keys",
+      "Normalization",
+      "Joins"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Linear Regression",
+      "Gradient Descent"
+    ],
+    "application": "House Price Prediction Pipeline",
+    "revision": [
+      "Linear Regression",
+      "Optimization",
+      "Bias-Variance"
+    ],
+    "interview": [
+      "Tell Me About Yourself",
+      "Explain Your Research"
+    ]
+  },
+  "2": {
+    "dsa": {
+      "topic": "Two Pointers",
+      "questions": [
+        "Valid Palindrome",
+        "Container With Most Water",
+        "3 Sum",
+        "Trapping Rain Water"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "NumPy",
+      "Broadcasting",
+      "Vectorization",
+      "Axis",
+      "Reshape",
+      "Einsum"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Logistic Regression"
+    ],
+    "application": "Customer Churn Prediction",
+    "revision": [
+      "Logistic Regression",
+      "Statistics",
+      "Optimization"
+    ],
+    "interview": []
+  },
+  "3": {
+    "dsa": {
+      "topic": "Sliding Window",
+      "questions": [
+        "Longest Substring Without Repeating Characters",
+        "Longest Repeating Character Replacement",
+        "Minimum Window Substring"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "GROUP BY",
+      "HAVING",
+      "ORDER BY",
+      "Window Functions"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "KNN"
+    ],
+    "application": "Recommendation System",
+    "revision": [
+      "KNN",
+      "PCA",
+      "Feature Engineering"
+    ],
+    "interview": []
+  },
+  "4": {
+    "dsa": {
+      "topic": "Stack & Queue",
+      "questions": [
+        "Valid Parentheses",
+        "Min Stack",
+        "Daily Temperatures"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Tensor Operations",
+      "Autograd",
+      "nn.Module",
+      "Dataset",
+      "DataLoader"
+    ],
+    "mlops": [],
+    "implementation": [
+      "KMeans"
+    ],
+    "application": "Customer Segmentation using DBSCAN",
+    "revision": [
+      "Clustering",
+      "PCA"
+    ],
+    "interview": []
+  },
+  "5": {
+    "dsa": {
+      "topic": "Binary Search",
+      "questions": [
+        "Binary Search",
+        "Search in Rotated Sorted Array",
+        "Median of Two Sorted Arrays"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "Transactions",
+      "ACID",
+      "Indexes",
+      "Locks"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Decision Tree"
+    ],
+    "application": "Fraud Detection",
+    "revision": [
+      "Decision Trees",
+      "Random Forest"
+    ],
+    "interview": []
+  },
+  "6": {
+    "dsa": {
+      "topic": "Linked List",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Conv2D",
+      "Padding",
+      "Stride",
+      "Pooling"
+    ],
+    "mlops": [],
+    "implementation": [
+      "PCA"
+    ],
+    "application": "Image Classification Pipeline",
+    "revision": [
+      "CNN",
+      "BatchNorm"
+    ],
+    "interview": []
+  },
+  "7": {
+    "dsa": {
+      "topic": "Trees / DFS / BFS",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "SQL Practice",
+      "SQL Patterns"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Batch Normalization"
+    ],
+    "application": "Transfer Learning",
+    "revision": [
+      "Attention",
+      "Transformers"
+    ],
+    "interview": []
+  },
+  "8": {
+    "dsa": {
+      "topic": "BST & Heap",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Self Attention",
+      "Multi Head Attention"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Self Attention"
+    ],
+    "application": "Mini RAG Pipeline",
+    "revision": [
+      "RAG",
+      "Embeddings",
+      "Vector Databases"
+    ],
+    "interview": []
+  },
+  "9": {
+    "dsa": {
+      "topic": "Graphs / BFS / DFS / Union Find",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "Advanced SQL",
+      "CTE",
+      "Window Functions"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Conv2D"
+    ],
+    "application": "Object Detection Pipeline",
+    "revision": [
+      "Transformers",
+      "Mixture of Experts"
+    ],
+    "interview": []
+  },
+  "10": {
+    "dsa": {
+      "topic": "Backtracking",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Training Loop",
+      "Optimizers",
+      "Learning Rate Scheduler",
+      "Loss Functions"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Neural Network from Scratch"
+    ],
+    "application": "Sentiment Analysis",
+    "revision": [
+      "Backpropagation",
+      "Initialization"
+    ],
+    "interview": []
+  },
+  "11": {
+    "dsa": {
+      "topic": "Dynamic Programming I",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [],
+    "mlops": [
+      "Docker",
+      "MLflow",
+      "DVC"
+    ],
+    "implementation": [
+      "Random Forest"
+    ],
+    "application": "XGBoost Pipeline",
+    "revision": [
+      "Trees",
+      "Boosting"
+    ],
+    "interview": []
+  },
+  "12": {
+    "dsa": {
+      "topic": "Dynamic Programming II",
+      "questions": []
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [],
+    "mlops": [
+      "FastAPI",
+      "Deployment",
+      "Model Serving",
+      "Monitoring"
+    ],
+    "implementation": [
+      "Revision of Previous Algorithms"
+    ],
+    "application": "ML System Design",
+    "revision": [
+      "Random Topics"
+    ],
+    "interview": []
+  },
+  "13": {
+    "dsa": {
+      "topic": "Mock Coding Interview",
+      "questions": [
+        "DSA",
+        "SQL"
+      ]
+    },
+    "paper": "",
+    "dbms": [],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "AI/ML Mock Interview"
+    ],
+    "application": "Research Interview",
+    "revision": [
+      "Research",
+      "Publications",
+      "Paper",
+      "Challenges",
+      "Contributions",
+      "Future Work"
+    ],
+    "interview": [
+      "Mock Coding Interview",
+      "AI/ML Mock Interview",
+      "Research Interview"
+    ]
+  }
+}

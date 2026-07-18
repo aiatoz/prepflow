@@ -1,0 +1,79 @@
+[
+  {
+    "id": "whiteboard",
+    "start": "06:00",
+    "end": "06:45",
+    "name": "Whiteboard Session",
+    "desc": "Teach one random topic from memory."
+  },
+  {
+    "id": "morning",
+    "start": "07:00",
+    "end": "08:00",
+    "name": "Breakfast / Exercise",
+    "desc": "Breakfast, exercise and get ready."
+  },
+  {
+    "id": "dsa",
+    "start": "09:00",
+    "end": "11:00",
+    "name": "DSA (NeetCode 150)",
+    "desc": "Solve NeetCode problems."
+  },
+  {
+    "id": "paper",
+    "start": "11:15",
+    "end": "12:15",
+    "name": "Paper Corrections",
+    "desc": "Continue research paper corrections."
+  },
+  {
+    "id": "lunch",
+    "start": "12:15",
+    "end": "13:30",
+    "name": "Lunch + Break",
+    "desc": "Lunch and rest."
+  },
+  {
+    "id": "dbms_lib",
+    "start": "13:30",
+    "end": "15:00",
+    "name": "DBMS / Libraries",
+    "desc": "Alternate between DBMS and ML libraries."
+  },
+  {
+    "id": "implementation",
+    "start": "15:15",
+    "end": "17:15",
+    "name": "ML/DL Implementations",
+    "desc": "Implement ML/DL algorithms from scratch."
+  },
+  {
+    "id": "break",
+    "start": "17:15",
+    "end": "18:00",
+    "name": "Break",
+    "desc": "Take a break."
+  },
+  {
+    "id": "applications",
+    "start": "18:00",
+    "end": "19:30",
+    "name": "Applications / Case Studies / MLOps",
+    "desc": "Apply concepts to real-world ML pipelines."
+  },
+  {
+    "id": "revision",
+    "start": "20:00",
+    "end": "21:00",
+    "name": "Random AI/ML Revision",
+    "desc": "Random revision using spaced repetition."
+  },
+  {
+    "id": "interview",
+    "start": "21:00",
+    "end": "21:30",
+    "name": "Interview Preparation",
+    "desc": "Behavioral and AI/ML interview practice."
+  }
+]
