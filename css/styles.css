@@ -1,0 +1,341 @@
+:root {
+    /* Premium Dark Theme variables */
+    --app-bg: #0D1117;
+    --app-card: #161B22;
+    --app-border: #30363D;
+    --text-primary: #E6EDF3;
+    --text-secondary: #8B949E;
+    --status-completed: #238636;
+    --status-skipped: #DA3633;
+    --status-in-progress: #1F6FEB;
+    --status-overdue: #D29922;
+}
+
+:root.light-mode {
+    /* Crisp Light Theme variables */
+    --app-bg: #F6F8FA;
+    --app-card: #FFFFFF;
+    --app-border: #D0D7DE;
+    --text-primary: #24292F;
+    --text-secondary: #57606A;
+    --status-completed: #1A7F37;
+    --status-skipped: #CF222E;
+    --status-in-progress: #0969DA;
+    --status-overdue: #9A6700;
+}
+
+/* Fluid transitions for modern aesthetic */
+body, .card, .button, .badge, header, footer, svg, p, h1, h2, h3, li, span, input, div, button {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--app-bg);
+    color: var(--text-primary);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--app-bg); }
+::-webkit-scrollbar-thumb { background: var(--app-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+/* Centered container for ultrawide screen optimization */
+.container {
+    max-width: 80rem; /* 1280px / max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 1rem;
+}
+@media (min-width: 768px) {
+    .container { padding: 1.5rem; }
+}
+@media (min-width: 1024px) {
+    .container { padding: 2rem; }
+}
+
+/* Core structure grids */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.content, .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Component Standards: Cards */
+.card {
+    background-color: var(--app-card);
+    border: 1px solid var(--app-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.card--highlight {
+    overflow: hidden;
+}
+.card--highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--status-in-progress);
+}
+.card--highlight-overdue {
+    overflow: hidden;
+}
+.card--highlight-overdue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--status-overdue);
+}
+.card--interactive:hover {
+    border-color: var(--text-secondary);
+}
+
+/* Component Standards: Buttons */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+}
+.button--primary {
+    background-color: var(--status-in-progress);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(31, 111, 235, 0.2);
+}
+.button--primary:hover {
+    filter: brightness(1.1);
+}
+.button--secondary {
+    background-color: transparent;
+    border-color: var(--app-border);
+    color: var(--text-secondary);
+}
+.button--secondary:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    background-color: rgba(139, 148, 158, 0.05);
+}
+.button--success {
+    background-color: var(--status-completed);
+    color: #ffffff;
+}
+.button--success:hover {
+    filter: brightness(1.15);
+}
+.button--danger {
+    background-color: var(--status-skipped);
+    color: #ffffff;
+}
+.button--danger:hover {
+    filter: brightness(1.15);
+}
+.button--outline-warning {
+    background-color: transparent;
+    border-color: var(--status-overdue);
+    color: var(--status-overdue);
+}
+.button--outline-warning:hover {
+    background-color: rgba(210, 153, 34, 0.1);
+}
+.button--small {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+}
+.button--large {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+}
+.button:disabled, .button.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Component Standards: Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+.badge--success {
+    background-color: rgba(35, 134, 54, 0.15);
+    color: var(--status-completed);
+    border: 1px solid rgba(35, 134, 54, 0.3);
+}
+.badge--warning {
+    background-color: rgba(210, 153, 34, 0.15);
+    color: var(--status-overdue);
+    border: 1px solid rgba(210, 153, 34, 0.3);
+}
+.badge--danger {
+    background-color: rgba(218, 54, 51, 0.15);
+    color: var(--status-skipped);
+    border: 1px solid rgba(218, 54, 51, 0.3);
+}
+.badge--info {
+    background-color: rgba(31, 111, 235, 0.15);
+    color: var(--status-in-progress);
+    border: 1px solid rgba(31, 111, 235, 0.3);
+}
+.badge--neutral {
+    background-color: rgba(139, 148, 158, 0.15);
+    color: var(--text-secondary);
+    border: 1px solid rgba(139, 148, 158, 0.3);
+}
+
+/* Component Standards: Timelines */
+.timeline-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--app-border);
+    background-color: var(--app-bg);
+    transition: all 0.2s ease;
+}
+.timeline-item--completed {
+    border-color: rgba(35, 134, 54, 0.25);
+}
+.timeline-item--skipped {
+    border-color: rgba(218, 54, 51, 0.25);
+}
+.timeline-item--in-progress {
+    border-color: var(--status-in-progress);
+    background-color: rgba(31, 111, 235, 0.05);
+}
+.timeline-item--overdue {
+    border-color: rgba(210, 153, 34, 0.3);
+}
+.timeline-item--upcoming {
+    border-color: var(--app-border);
+    opacity: 0.85;
+}
+
+.timeline-item__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--app-border);
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.timeline-item--completed .timeline-item__dot {
+    background-color: var(--status-completed);
+}
+.timeline-item--skipped .timeline-item__dot {
+    background-color: var(--status-skipped);
+}
+.timeline-item--in-progress .timeline-item__dot {
+    background-color: var(--status-in-progress);
+    box-shadow: 0 0 8px var(--status-in-progress);
+}
+.timeline-item--overdue .timeline-item__dot {
+    background-color: var(--status-overdue);
+}
+
+/* Navigation Toggles */
+.tab-btn {
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+}
+.tab-btn.is-active {
+    border-color: var(--status-in-progress);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.progress-fill { transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.toast {
+    background: rgba(22, 27, 34, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--app-border);
+}
+:root.light-mode .toast {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+}
+
+/* Calendar grid cell specifications */
+.calendar-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    position: relative;
+}
+.calendar-cell--inactive {
+    color: rgba(139, 148, 158, 0.25);
+    cursor: not-allowed;
+}
+.calendar-cell--active {
+    border: 1px solid var(--app-border);
+    cursor: pointer;
+}
+.calendar-cell--active:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+.calendar-cell--current {
+    outline: 2.5px solid var(--status-in-progress);
+    outline-offset: 1px;
+}
+.calendar-tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.95);
+    color: #fff;
+    padding: 0.35rem 0.6rem;
+    border-radius: 0.35rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    z-index: 50;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.calendar-cell--active:hover .calendar-tooltip {
+    visibility: visible;
+}
