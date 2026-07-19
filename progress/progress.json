@@ -9,18 +9,23 @@
       "dbms_lib": "completed",
       "implementation": "completed",
       "break": "completed",
-      "applications": "completed"
+      "applications": "completed",
+      "revision": "completed"
     }
   },
   "mastered_whiteboard": [
     "Transformers"
   ],
-  "mastered_revisions": [],
+  "mastered_revisions": [
+    "PCA",
+    "Transformers",
+    "Embeddings"
+  ],
   "overall_stats": {
-    "completedTasks": 10,
+    "completedTasks": 14,
     "skippedTasks": 0,
     "whiteboardCompleted": 1,
-    "revisionCompleted": 0
+    "revisionCompleted": 3
   },
-  "exportedAt": "2026-07-19T15:00:36.914Z"
+  "exportedAt": "2026-07-19T15:56:59.867Z"
 }
