@@ -18,8 +18,7 @@
     }
   },
   "mastered_whiteboard": [
-    "Transformers",
-    "Self-Attention"
+    "Transformers"
   ],
   "mastered_revisions": [
     "PCA",
@@ -27,10 +26,10 @@
     "Embeddings"
   ],
   "overall_stats": {
-    "completedTasks": 17,
+    "completedTasks": 16,
     "skippedTasks": 0,
-    "whiteboardCompleted": 2,
+    "whiteboardCompleted": 1,
     "revisionCompleted": 3
   },
-  "exportedAt": "2026-07-20T01:09:10.149Z"
+  "exportedAt": "2026-07-20T01:38:33.999Z"
 }
