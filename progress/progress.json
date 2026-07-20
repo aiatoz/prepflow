@@ -12,10 +12,14 @@
       "applications": "completed",
       "revision": "completed",
       "interview": "completed"
+    },
+    "2026-07-20": {
+      "whiteboard": "completed"
     }
   },
   "mastered_whiteboard": [
-    "Transformers"
+    "Transformers",
+    "Self-Attention"
   ],
   "mastered_revisions": [
     "PCA",
@@ -23,10 +27,10 @@
     "Embeddings"
   ],
   "overall_stats": {
-    "completedTasks": 15,
+    "completedTasks": 17,
     "skippedTasks": 0,
-    "whiteboardCompleted": 1,
+    "whiteboardCompleted": 2,
     "revisionCompleted": 3
   },
-  "exportedAt": "2026-07-19T16:07:35.258Z"
+  "exportedAt": "2026-07-20T01:09:10.149Z"
 }
