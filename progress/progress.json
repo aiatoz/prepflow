@@ -14,7 +14,10 @@
       "interview": "completed"
     },
     "2026-07-20": {
-      "whiteboard": "completed"
+      "whiteboard": "completed",
+      "morning": "completed",
+      "paper": "completed",
+      "lunch": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -26,10 +29,10 @@
     "Embeddings"
   ],
   "overall_stats": {
-    "completedTasks": 16,
+    "completedTasks": 19,
     "skippedTasks": 0,
     "whiteboardCompleted": 1,
     "revisionCompleted": 3
   },
-  "exportedAt": "2026-07-20T01:38:33.999Z"
+  "exportedAt": "2026-07-20T11:07:45.296Z"
 }
