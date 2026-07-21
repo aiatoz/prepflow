@@ -19,11 +19,14 @@
       "dsa": "completed",
       "paper": "completed",
       "lunch": "completed",
-	  "break": "completed"
+      "break": "completed"
     },
     "2026-07-21": {
       "whiteboard": "completed",
-      "morning": "completed"
+      "morning": "completed",
+      "dsa": "completed",
+      "paper": "completed",
+      "lunch": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -36,10 +39,10 @@
     "Embeddings"
   ],
   "overall_stats": {
-    "completedTasks": 23,
+    "completedTasks": 27,
     "skippedTasks": 0,
     "whiteboardCompleted": 2,
     "revisionCompleted": 3
   },
-  "exportedAt": "2026-07-21T01:55:32.780Z"
+  "exportedAt": "2026-07-21T08:58:13.993Z"
 }
