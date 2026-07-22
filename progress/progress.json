@@ -20,8 +20,8 @@
       "paper": "completed",
       "lunch": "completed",
       "break": "completed",
-	  "dbms_lib": "completed",
-	  "interview": "completed"
+      "dbms_lib": "completed",
+      "interview": "completed"
     },
     "2026-07-21": {
       "whiteboard": "completed",
@@ -37,7 +37,9 @@
     },
     "2026-07-22": {
       "whiteboard": "completed",
-      "morning": "completed"
+      "morning": "completed",
+      "dsa": "completed",
+      "paper": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -51,10 +53,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 35,
+    "completedTasks": 39,
     "skippedTasks": 0,
     "whiteboardCompleted": 2,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-07-22T05:40:33.993Z"
+  "exportedAt": "2026-07-22T07:57:20.315Z"
 }
