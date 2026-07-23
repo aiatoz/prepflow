@@ -53,7 +53,9 @@
       "dsa": "completed",
       "paper": "completed",
       "lunch": "completed",
-      "dbms_lib": "completed"
+      "dbms_lib": "completed",
+      "break": "completed",
+      "applications": "skipped"
     }
   },
   "mastered_whiteboard": [
@@ -68,10 +70,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 52,
-    "skippedTasks": 0,
+    "completedTasks": 53,
+    "skippedTasks": 1,
     "whiteboardCompleted": 3,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-07-23T10:32:23.415Z"
+  "exportedAt": "2026-07-23T14:31:14.767Z"
 }
