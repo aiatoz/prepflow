@@ -42,6 +42,7 @@
       "paper": "completed",
       "lunch": "completed",
       "break": "completed",
+	  "dbms_lib": "completed",
       "implementation": "completed",
       "interview": "completed",
       "revision": "completed"
@@ -67,5 +68,5 @@
     "whiteboardCompleted": 3,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-07-23T00:40:30.078Z"
+  "exportedAt": "2026-07-23T00:40:26.465Z"
 }
