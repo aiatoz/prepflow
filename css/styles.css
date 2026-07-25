@@ -304,7 +304,7 @@ body {
 	position: relative;
 }
 .calendar-cell--inactive {
-	color: rgba(139, 148, 158, 0.25);
+	color: rgb(139 148 158);
 	cursor: not-allowed;
 }
 .calendar-cell--active {
