@@ -62,7 +62,12 @@
       "morning": "completed",
       "lunch": "completed",
       "paper": "completed",
-      "break": "completed"
+      "break": "completed",
+      "dsa": "completed"
+    },
+    "2026-07-25": {
+      "whiteboard": "completed",
+      "morning": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -78,10 +83,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 59,
+    "completedTasks": 62,
     "skippedTasks": 1,
     "whiteboardCompleted": 4,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-07-24T16:16:46.133Z"
+  "exportedAt": "2026-07-25T04:41:20.014Z"
 }
