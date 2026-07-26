@@ -77,13 +77,19 @@
       "dbms_lib": "completed",
       "break": "completed",
       "interview": "completed"
+    },
+    "2026-07-26": {
+      "morning": "completed",
+      "paper": "completed",
+      "whiteboard": "completed"
     }
   },
   "mastered_whiteboard": [
     "Transformers",
     "RAG",
     "Batch Normalization",
-    "DBSCAN"
+    "DBSCAN",
+    "Bias-Variance Tradeoff"
   ],
   "mastered_revisions": [
     "PCA",
@@ -92,10 +98,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 71,
+    "completedTasks": 75,
     "skippedTasks": 1,
-    "whiteboardCompleted": 4,
+    "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-07-25T17:07:04.282Z"
+  "exportedAt": "2026-07-26T06:11:25.521Z"
 }
