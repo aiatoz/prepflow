@@ -85,7 +85,9 @@
       "dsa": "completed",
       "lunch": "completed",
       "implementation": "completed",
-      "break": "completed"
+      "break": "completed",
+	  "interview": "completed",
+	  "revision": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -107,5 +109,5 @@
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-07-26T15:26:54.697Z"
+  "exportedAt": "2026-07-27T00:30:22.022Z"
 }
