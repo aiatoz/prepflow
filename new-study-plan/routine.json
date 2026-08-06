@@ -1,8 +1,8 @@
 {
-  "core-4block": {
-    "id": "core-4block",
-    "name": "Core 4-Session Day",
-    "desc": "Standard prep day split into 4 focused sessions.",
+  "basicNewTimetable": {
+    "id": "basicNewTimetable",
+    "name": "New basic timetable",
+    "desc": "Standard prep day split into 4/5 focused sessions.",
     "schedule": [
       {
         "id": "dsa",
@@ -62,8 +62,8 @@
       }
     ]
   },
-  "legacy-11block": {
-    "id": "legacy-11block",
+  "legacyTimetable": {
+    "id": "legacyTimetable",
     "name": "July Prep Schedule (11-Session, Archived)",
     "desc": "The original July 19\u201331 daily schedule, kept so that month's logged history still renders correctly.",
     "schedule": [
@@ -150,6 +150,175 @@
     "id": "off",
     "name": "Off Day",
     "desc": "No sessions scheduled. Rest / catch-up day.",
-    "schedule": []
+    "schedule": [
+	  {
+        "id": "dsa",
+        "start": "09:00",
+        "end": "11:30",
+        "name": "DSA",
+        "desc": "Data Structures & Algorithms practice."
+      }
+	]
+  },
+  "deepWorkTimetable": {
+    "id": "deepWorkTimetable",
+    "name": "Deep Work Timetable",
+    "desc": "Primary AI/ML preparation routine focused on DSA, research, theory and long implementation sessions.",
+    "schedule": [
+      {
+        "id": "whiteboard",
+        "start": "06:15",
+        "end": "06:45",
+        "name": "Whiteboard Session",
+        "desc": "Teach one topic from memory (ML, DSA, interview or derivation)."
+      },
+      {
+        "id": "morning",
+        "start": "07:00",
+        "end": "09:00",
+        "name": "Breakfast / Shower / Get Ready",
+        "desc": "Morning routine."
+      },
+      {
+        "id": "dsa",
+        "start": "09:00",
+        "end": "11:30",
+        "name": "DSA",
+        "desc": "Data Structures & Algorithms practice."
+      },
+      {
+        "id": "paper",
+        "start": "11:45",
+        "end": "13:00",
+        "name": "Paper / Research",
+        "desc": "Research paper writing, experiments or lab work."
+      },
+      {
+        "id": "lunch",
+        "start": "13:00",
+        "end": "14:00",
+        "name": "Lunch",
+        "desc": "Lunch and recharge."
+      },
+      {
+        "id": "revision",
+        "start": "14:00",
+        "end": "16:00",
+        "name": "Theory / Math / Revision",
+        "desc": "Mathematics, derivations, interview theory and revision."
+      },
+      {
+        "id": "break",
+        "start": "16:00",
+        "end": "16:30",
+        "name": "Break",
+        "desc": "Walk, tea and recharge."
+      },
+      {
+        "id": "implementation",
+        "start": "16:30",
+        "end": "20:30",
+        "name": "Implementation / Projects",
+        "desc": "Deep work on implementations and end-to-end AI projects."
+      }
+    ]
+  },
+  "implementationDay": {
+    "id": "implementationDay",
+    "name": "Implementation Day",
+    "desc": "Project-focused day with an extended implementation block.",
+    "schedule": [
+      {
+        "id": "dsa",
+        "start": "09:00",
+        "end": "10:30",
+        "name": "DSA",
+        "desc": "Data Structures & Algorithms practice."
+      },
+      {
+        "id": "planning",
+        "start": "10:45",
+        "end": "12:00",
+        "name": "Planning / Reading Docs",
+        "desc": "Design, architecture, documentation and research before coding."
+      },
+      {
+        "id": "implementation",
+        "start": "13:30",
+        "end": "18:00",
+        "name": "Implementation",
+        "desc": "Deep implementation session (take a short break as needed)."
+      },
+      {
+        "id": "notes",
+        "start": "18:15",
+        "end": "19:30",
+        "name": "Debugging / Notes",
+        "desc": "Debug, document learnings and plan the next session."
+      }
+    ]
+  },
+  "researchDay": {
+    "id": "researchDay",
+    "name": "Research / Lab Day",
+    "desc": "Weekend routine focused on research, lab work and experiments.",
+    "schedule": [
+      {
+        "id": "dsa",
+        "start": "09:00",
+        "end": "10:30",
+        "name": "DSA",
+        "desc": "Keep DSA momentum."
+      },
+      {
+        "id": "lab",
+        "start": "11:00",
+        "end": "16:30",
+        "name": "Paper / Lab / Experiments",
+        "desc": "Research, experiments or lab work."
+      },
+      {
+        "id": "paper",
+        "start": "17:00",
+        "end": "18:30",
+        "name": "Paper Writing",
+        "desc": "Write results, figures or corrections."
+      },
+      {
+        "id": "revision",
+        "start": "18:45",
+        "end": "19:45",
+        "name": "Revision",
+        "desc": "Theory revision or interview preparation."
+      }
+    ]
+  },
+  "recoveryDay": {
+    "id": "recoveryDay",
+    "name": "Recovery Day",
+    "desc": "Light day for recovery while maintaining consistency.",
+    "schedule": [
+      {
+        "id": "dsa",
+        "start": "09:30",
+        "end": "11:00",
+        "name": "DSA",
+        "desc": "Light DSA practice."
+      },
+      {
+        "id": "revision",
+        "start": "11:30",
+        "end": "12:30",
+        "name": "Theory Revision",
+        "desc": "Review concepts or derivations."
+      },
+      {
+        "id": "implementation",
+        "start": "15:30",
+        "end": "17:30",
+        "name": "Small Implementation",
+        "desc": "Minor coding task, refactoring or experiment."
+      }
+    ]
   }
 }

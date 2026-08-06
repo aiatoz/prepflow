@@ -1,6 +1,6 @@
 {
   "2026-07-19": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Arrays & Hashing",
       "questions": [
@@ -34,7 +34,7 @@
     ]
   },
   "2026-07-20": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Arrays & Hashing",
       "questions": [
@@ -66,7 +66,7 @@
     "interview": []
   },
   "2026-07-21": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Two Pointers",
       "questions": [
@@ -96,7 +96,7 @@
     "interview": []
   },
   "2026-07-22": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Sliding Window & Stack",
       "questions": [
@@ -126,7 +126,7 @@
     "interview": []
   },
   "2026-07-23": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Binary Search",
       "questions": [
@@ -155,7 +155,7 @@
     "interview": []
   },
   "2026-07-24": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Linked Lists",
       "questions": [
@@ -184,7 +184,7 @@
     "interview": []
   },
   "2026-07-25": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Trees (DFS)",
       "questions": [
@@ -211,7 +211,7 @@
     "interview": []
   },
   "2026-07-26": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Trees (BFS)",
       "questions": [
@@ -239,7 +239,7 @@
     "interview": []
   },
   "2026-07-27": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Heaps / Priority Queue",
       "questions": [
@@ -267,7 +267,7 @@
     "interview": []
   },
   "2026-07-28": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Graphs (Grid DFS/BFS)",
       "questions": [
@@ -296,7 +296,7 @@
     "interview": []
   },
   "2026-07-29": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Graphs",
       "questions": [
@@ -324,7 +324,7 @@
     "interview": []
   },
   "2026-07-30": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Dynamic Programming",
       "questions": [
@@ -352,7 +352,7 @@
     "interview": []
   },
   "2026-07-31": {
-    "routineId": "legacy-11block",
+    "routineId": "legacyTimetable",
     "dsa": {
       "topic": "Mock Coding Interview",
       "questions": [
@@ -383,27 +383,504 @@
     ]
   },
   "2026-08-06": {
-    "routineId": "core-4block",
+    "routineId": "deepWorkTimetable",
     "dsa": {
       "topic": "Arrays & Hashing",
       "questions": [
-        "Two Sum",
-        "Valid Anagram",
-        "Contains Duplicate"
+        "Two Sum (#1)",
+        "Encode and Decode Strings",
+        "Longest Consecutive Sequence (#128)",
+        "Valid Sudoku (#36)"
       ]
     },
-    "paper": "Continue paper corrections.",
+    "paper": "NA",
     "revision": [
-      "Linear Regression",
-      "Bias-Variance",
-      "Optimization"
+      "CNN Fundamentals",
+      "Convolution Derivation",
+      "Padding",
+      "Stride",
+      "Pooling"
     ],
     "implementation": [
-      "Linear Regression",
-      "Gradient Descent"
+      "NA"
     ]
   },
   "2026-08-07": {
-    "routineId": "off"
+    "routineId": "recoveryDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Longest Substring Without Repeating Characters (#3)",
+        "Permutation in String (#567)",
+        "Trapping Rain Water (#42)",
+        "Daily Temperatures (#739)"
+      ]
+    },
+    "revision": [
+      "Hypothesis Testing",
+      "Null vs Alternative Hypothesis",
+      "p-value Interpretation",
+      "Type I & Type II Errors",
+      "Confidence Interval",
+      "Z-test vs T-test vs Chi-square vs ANOVA",
+      "Interview Scenarios"
+    ],
+    "implementation": [
+      "XGBoost"
+    ]
+  },
+  "2026-08-08": {
+    "routineId": "deepWorkTimetable",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Search in Rotated Sorted Array (#33)",
+        "Koko Eating Bananas (#875)",
+        "Reorder List (#143)",
+        "Copy List with Random Pointer (#138)"
+      ]
+    },
+    "paper": "Experiments or Paper/Thesis writing",
+    "revision": [
+      "SVM",
+      "Margin",
+      "Hard vs Soft Margin",
+      "Kernel Trick",
+      "RBF & Polynomial Kernels",
+      "C and Gamma Intuition"
+    ],
+    "implementation": [
+      "Recommendation System"
+    ]
+  },
+  "2026-08-09": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Maximum Depth of Binary Tree (#104)",
+        "Binary Tree Right Side View (#199)",
+        "Kth Largest Element in a Stream (#703)",
+        "Binary Tree Level Order Traversal (#102)"
+      ]
+    },
+    "revision": [
+      "CNN Backpropagation",
+      "Receptive Field",
+      "Dilated Convolution",
+      "1x1 Convolution",
+      "CNN Output Shape Numericals"
+    ]
+  },
+  "2026-08-10": {
+    "routineId": "recoveryDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Number of Islands (#200)",
+        "Pacific Atlantic Water Flow (#417)",
+        "Surrounded Regions (#130)",
+        "Course Schedule (#207)"
+      ]
+    },
+    "revision": [
+      "Gradient Descent",
+      "Convex vs Non-convex",
+      "Momentum",
+      "RMSProp",
+      "Adam",
+      "Learning Rate Scheduling",
+      "Gradient Clipping"
+    ],
+    "implementation": [
+      "A Decision Tree based problem"
+    ]
+  },
+  "2026-08-11": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "House Robber (#198)",
+        "Decode Ways (#91)",
+        "Partition Equal Subset Sum (#416)",
+        "Merge Intervals (#56)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for Mini-RAG",
+    "implementation": [
+      "Mini-RAG"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-12": {
+    "routineId": "deepWorkTimetable",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Group Anagrams (#49)",
+        "Top K Frequent Elements (#347)",
+        "Car Fleet (#853)",
+        "LRU Cache (#146)"
+      ]
+    },
+    "paper": "Experiments or Paper/Thesis writing",
+    "revision": [
+      "Logistic Regression",
+      "Decision Boundary",
+      "Sigmoid",
+      "Log Loss",
+      "Threshold Tuning",
+      "Precision vs Recall"
+    ],
+    "implementation": [
+      "Batch Norm, Layer Norm"
+    ]
+  },
+  "2026-08-13": {
+    "routineId": "deepWorkTimetable",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Container With Most Water (#11)",
+        "3Sum (#15)",
+        "Sliding Window Maximum (#239)",
+        "Minimum Window Substring (#76)"
+      ]
+    },
+    "paper": "Experiments or Paper/Thesis writing",
+    "revision": [
+      "Model Evaluation",
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1",
+      "ROC vs PR Curve",
+      "ROC-AUC vs PR-AUC",
+      "Cross Validation",
+      "Stratified K-Fold"
+    ],
+    "implementation": [
+      "Customer Segmentation using DBSCAN"
+    ]
+  },
+  "2026-08-14": {
+    "routineId": "recoveryDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Find Minimum in Rotated Sorted Array (#153)",
+        "Find Peak Element (#162)",
+        "Time Based Key-Value Store (#981)",
+        "Merge k Sorted Lists (#23)"
+      ]
+    },
+    "revision": [
+      "Decision Trees & Random Forest",
+      "Bias vs Variance",
+      "Underfitting vs Overfitting",
+      "Feature Importance",
+      "Max Depth",
+      "Number of Trees"
+    ],
+    "implementation": [
+      "XGBoost"
+    ]
+  },
+  "2026-08-15": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Validate BST (#98)",
+        "Construct Binary Tree from Preorder and Inorder (#105)",
+        "Binary Tree Maximum Path Sum (#124)",
+        "Find Median from Data Stream (#295)"
+      ]
+    },
+    "revision": [
+      "Interview Reasoning",
+      "Metric Selection",
+      "Model Selection",
+      "Choose Statistical Test",
+      "Hyperparameter Effects",
+      "Data Leakage",
+      "Class Imbalance",
+      "Missing Values",
+      "Explainability",
+      "Real-time Inference"
+    ]
+  },
+  "2026-08-16": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Clone Graph (#133)",
+        "Graph Valid Tree",
+        "Redundant Connection (#684)",
+        "Word Ladder (#127)"
+      ]
+    },
+    "revision": [
+      "Gradient Descent",
+      "Batch vs SGD",
+      "Momentum",
+      "Adam"
+    ]
+  },
+  "2026-08-17": {
+    "routineId": "off",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Coin Change (#322)",
+        "Longest Increasing Subsequence (#300)",
+        "Target Sum (#494)",
+        "Task Scheduler (#621)"
+      ]
+    }
+  },
+  "2026-08-18": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Top K Frequent Elements (#347)",
+        "Rotate Image (#48)",
+        "Sort Colors (#75)",
+        "Majority Element (#169)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for Object Detection using YOLO",
+    "implementation": [
+      "Object Detection using YOLO"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-19": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Trapping Rain Water (#42)",
+        "Longest Repeating Character Replacement (#424)",
+        "Fruit Into Baskets (#904)",
+        "Sliding Window Maximum (#239)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for ML System Design",
+    "implementation": [
+      "ML System Design"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-20": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Koko Eating Bananas (#875)",
+        "Search a 2D Matrix (#74)",
+        "Remove Nth Node From End of List (#19)",
+        "Linked List Cycle II (#142)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for Transfer Learning",
+    "implementation": [
+      "Transfer Learning"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-21": {
+    "routineId": "recoveryDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Binary Tree Right Side View (#199)",
+        "Diameter of Binary Tree (#543)",
+        "Lowest Common Ancestor of BST (#235)",
+        "Binary Tree Zigzag Level Order Traversal (#103)"
+      ]
+    },
+    "revision": [
+      "Naive Bayes",
+      "Gaussian NB",
+      "Multinomial NB",
+      "Laplace Smoothing"
+    ],
+    "implementation": [
+      "NA"
+    ]
+  },
+  "2026-08-22": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Course Schedule (#207)",
+        "Number of Connected Components in an Undirected Graph (NeetCode Premium)",
+        "Accounts Merge (#721)",
+        "Alien Dictionary (NeetCode Premium)"
+      ]
+    },
+    "revision": [
+      "Gradient Descent",
+      "Batch vs SGD",
+      "Momentum",
+      "Adam"
+    ]
+  },
+  "2026-08-23": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Longest Increasing Subsequence (#300)",
+        "Word Break (#139)",
+        "Longest Palindromic Substring (#5)",
+        "Meeting Rooms II (NeetCode Premium)"
+      ]
+    },
+    "revision": [
+      "CNN Backpropagation",
+      "Receptive Field",
+      "Dilated Convolution",
+      "1x1 Convolution"
+    ]
+  },
+  "2026-08-24": {
+    "routineId": "off",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Product of Array Except Self (#238)",
+        "First Missing Positive (#41)",
+        "Insert Interval (#57)",
+        "Merge Intervals (#56)"
+      ]
+    }
+  },
+  "2026-08-25": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Minimum Window Substring (#76)",
+        "Jump Game (#55)",
+        "Gas Station (#134)",
+        "Candy (#135)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for ViT + BERT Image Captioning",
+    "implementation": [
+      "ViT + BERT Image Captioning"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-26": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Time Based Key-Value Store (#981)",
+        "Median of Two Sorted Arrays (#4)",
+        "Reverse Nodes in k-Group (#25)",
+        "LFU Cache (#460)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for Some Agentic Stuff",
+    "implementation": [
+      "Some Agentic Stuff"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-27": {
+    "routineId": "implementationDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Binary Tree Maximum Path Sum (#124)",
+        "Serialize and Deserialize Binary Tree (#297)",
+        "K Closest Points to Origin (#973)",
+        "IPO (#502)"
+      ]
+    },
+    "planning": "Architecture, dataset/resources, and implementation plan for OpenClaw",
+    "implementation": [
+      "OpenClaw"
+    ],
+    "notes": [
+      "Document learnings",
+      "Debug and refactor",
+      "Write README and next steps"
+    ]
+  },
+  "2026-08-28": {
+    "routineId": "recoveryDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Word Ladder (#127)",
+        "Network Delay Time (#743)",
+        "Cheapest Flights Within K Stops (#787)",
+        "Reconstruct Itinerary (#332)"
+      ]
+    },
+    "revision": [
+      "Gradient Descent",
+      "Batch vs SGD",
+      "Momentum",
+      "Adam"
+    ],
+    "implementation": [
+      "NA"
+    ]
+  },
+  "2026-08-29": {
+    "routineId": "deepWorkTimetable",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Target Sum (#494)",
+        "Distinct Subsequences (#115)",
+        "Burst Balloons (#312)",
+        "N-Queens (#51)"
+      ]
+    },
+    "paper": "Experiments or Paper/Thesis writing",
+    "revision": [
+      "CNN Backpropagation",
+      "Receptive Field",
+      "Dilated Convolution",
+      "1x1 Convolution"
+    ],
+    "implementation": [
+      "NA"
+    ]
   }
 }
