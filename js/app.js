@@ -1,30 +1,51 @@
         
         // Loaded configurations references
+        // legacy mode:  routine      -> flat array of session blocks (same every day)
+        //               studyPlan    -> keyed by "nth day" (1, 2, 3 ...)
+        // flexible mode: routines    -> object keyed by routine id, each with its own .schedule[]
+        //               studyPlan    -> keyed by actual date "YYYY-MM-DD", each entry carries a routineId
         let CONFIG = {
             app: {},
-            routine: [],
+            legacy: true,
+            routine: [],       // legacy: array of session blocks
+            routines: {},      // flexible: { routineId: { id, name, schedule: [...] } }
             whiteboardTopics: [],
             revisionTopics: {},
             studyPlan: {}
         };
 
-        // Configuration loader — fetches decoupled JSON files from /json
+        // Configuration loader — fetches decoupled JSON files, branching on app.json's useLegacyConfig flag
         const loader = {
             async loadAll() {
                 try {
-                    const [app, routine, whiteboardTopics, revisionTopics, studyPlan] = await Promise.all([
-                        fetch('json/app.json').then(r => r.json()),
-                        fetch('json/routine.json').then(r => r.json()),
-                        fetch('json/whiteboard.json').then(r => r.json()),
-                        fetch('json/revision.json').then(r => r.json()),
-                        fetch('json/study-plan.json').then(r => r.json())
-                    ]);
+                    const app = await fetch('json/app.json').then(r => r.json());
                     CONFIG.app = app;
-                    CONFIG.routine = routine;
+                    CONFIG.legacy = !!app.useLegacyConfig;
+
+                    const [whiteboardTopics, revisionTopics] = await Promise.all([
+                        fetch('json/whiteboard.json').then(r => r.json()),
+                        fetch('json/revision.json').then(r => r.json())
+                    ]);
                     CONFIG.whiteboardTopics = whiteboardTopics;
                     CONFIG.revisionTopics = revisionTopics;
-                    CONFIG.studyPlan = studyPlan;
-                    console.log("Configuration JSON files fetched and parsed successfully.");
+
+                    if (CONFIG.legacy) {
+                        const [routine, studyPlan] = await Promise.all([
+                            fetch('json/routine.json').then(r => r.json()),
+                            fetch('json/study-plan.json').then(r => r.json())
+                        ]);
+                        CONFIG.routine = routine;
+                        CONFIG.studyPlan = studyPlan;
+                    } else {
+                        const [routines, studyPlan] = await Promise.all([
+                            fetch('new-study-plan/routine.json').then(r => r.json()),
+                            fetch('new-study-plan/plan.json').then(r => r.json())
+                        ]);
+                        CONFIG.routines = routines;
+                        CONFIG.studyPlan = studyPlan;
+                    }
+
+                    console.log(`Configuration JSON files fetched and parsed successfully. Mode: ${CONFIG.legacy ? 'legacy' : 'flexible'}.`);
                 } catch (e) {
                     console.error("Configuration decoding error: ", e);
                     showToast("Failed loading configuration JSON files", "warning");
@@ -186,6 +207,24 @@
                 return diffDays;
             },
             
+            // All calendar dates covered by the prep window, in order, each tagged with its day number.
+            getDateRange() {
+                if (!CONFIG.app.startDate || !CONFIG.app.endDate) return [];
+                const dates = [];
+                const cursor = new Date(CONFIG.app.startDate + 'T00:00:00');
+                const end = new Date(CONFIG.app.endDate + 'T00:00:00');
+                let dayNum = 1;
+                while (cursor.getTime() <= end.getTime()) {
+                    const year = cursor.getFullYear();
+                    const month = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const day = String(cursor.getDate()).padStart(2, '0');
+                    dates.push({ dateStr: `${year}-${month}-${day}`, dayNum });
+                    cursor.setDate(cursor.getDate() + 1);
+                    dayNum++;
+                }
+                return dates;
+            },
+
             timeToMinutes(timeStr) {
                 const [h, m] = timeStr.split(':').map(Number);
                 return h * 60 + m;
@@ -196,6 +235,46 @@
                 return now.getHours() * 60 + now.getMinutes();
             },
             
+            // Resolve the list of session blocks that apply to a given date.
+            // Legacy mode: same routine every day.
+            // Flexible mode: looked up via the study-plan entry's routineId; an
+            // unset date or a routine with an empty schedule both mean "off".
+            getRoutineForDate(dateStr) {
+                if (CONFIG.legacy) return CONFIG.routine;
+
+                const planEntry = CONFIG.studyPlan[dateStr];
+                if (!planEntry || !planEntry.routineId) return [];
+
+                const routineDef = CONFIG.routines[planEntry.routineId];
+                if (!routineDef || !Array.isArray(routineDef.schedule)) return [];
+
+                return routineDef.schedule;
+            },
+
+            // A date counts as "off" when it resolves to no session blocks at all.
+            isOffDay(dateStr) {
+                if (CONFIG.legacy) return false;
+                return this.getRoutineForDate(dateStr).length === 0;
+            },
+
+            // Unified study-plan lookup for a date: legacy keys by "nth day", flexible keys by the date itself.
+            getStudyPlanForDate(dateStr) {
+                if (CONFIG.legacy) {
+                    const start = new Date(CONFIG.app.startDate);
+                    start.setHours(0, 0, 0, 0);
+                    const current = new Date(dateStr);
+                    current.setHours(0, 0, 0, 0);
+                    const dayNum = Math.floor((current.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+                    return CONFIG.studyPlan[dayNum] || null;
+                }
+
+                const entry = CONFIG.studyPlan[dateStr];
+                if (!entry) return null;
+                // Strip the routineId key out — it's metadata, not a subject to render.
+                const { routineId, ...subjects } = entry;
+                return subjects;
+            },
+
             // Dynamic evaluation of timeline item states for a chosen date
             getTimelineStateForDate(dateStr) {
                 const logs = storage.get('logs') || {};
@@ -203,7 +282,7 @@
                 const currentMins = this.getCurrentTimeMinutes();
                 const activeTodayStr = this.getDateString();
                 
-                return CONFIG.routine.map(task => {
+                return this.getRoutineForDate(dateStr).map(task => {
                     const startMins = this.timeToMinutes(task.start);
                     const endMins = this.timeToMinutes(task.end);
                     
@@ -234,10 +313,6 @@
                 });
             },
             
-            getStudyPlanForDay(dayNum) {
-                return CONFIG.studyPlan[dayNum] || null;
-            },
-
             // Active consecutive streak computation using real historical entries
             getStreak() {
                 const logs = storage.get('logs') || {};
@@ -547,10 +622,15 @@
             },
             
             renderStudyPlan() {
-                const dayNum = scheduler.getDayNumber();
-                const plan = scheduler.getStudyPlanForDay(dayNum);
+                const dateStr = scheduler.getDateString();
                 const container = document.getElementById('study-plan');
-                
+
+                if (scheduler.isOffDay(dateStr)) {
+                    container.innerHTML = '<p class="italic text-center py-4">Off day — no sessions scheduled. Enjoy the rest!</p>';
+                    return;
+                }
+
+                const plan = scheduler.getStudyPlanForDate(dateStr);
                 if (!plan) {
                     container.innerHTML = '<p class="italic text-center py-4">No academic roadmap entries found for today.</p>';
                     return;
@@ -597,57 +677,151 @@
                 }
             },
 
-            renderCalendarView() {
-                const gridEl = document.getElementById('calendar-grid');
-                if (!gridEl) return;
-                gridEl.innerHTML = '';
+            // Which month the calendar grid is currently showing. { year, month(0-indexed) }
+            calendarCursor: null,
 
-                const activeDateString = scheduler.getDateString();
-
-                // Grid structures representing July 2026
-                const julyWeekdayOffset = 3; // July 1st is a Wednesday
-                const daysInJuly = 31;
-
-                // Week offset renderers
-                for (let i = 0; i < julyWeekdayOffset; i++) {
-                    const cell = document.createElement('div');
-                    cell.className = 'calendar-cell calendar-cell--inactive bg-transparent border-0';
-                    gridEl.appendChild(cell);
+            // Default the calendar to the real current month, clamped inside the configured prep window.
+            initCalendarCursor() {
+                const range = scheduler.getDateRange();
+                if (range.length === 0) {
+                    this.calendarCursor = { year: new Date().getFullYear(), month: new Date().getMonth() };
+                    return;
                 }
+                const firstD = new Date(range[0].dateStr + 'T00:00:00');
+                const lastD = new Date(range[range.length - 1].dateStr + 'T00:00:00');
+                const today = new Date();
 
-                let totalPrepCompleted = 0;
+                let year = today.getFullYear();
+                let month = today.getMonth();
+
+                const beforeRange = (year < firstD.getFullYear()) || (year === firstD.getFullYear() && month < firstD.getMonth());
+                const afterRange = (year > lastD.getFullYear()) || (year === lastD.getFullYear() && month > lastD.getMonth());
+
+                if (beforeRange) { year = firstD.getFullYear(); month = firstD.getMonth(); }
+                if (afterRange) { year = lastD.getFullYear(); month = lastD.getMonth(); }
+
+                this.calendarCursor = { year, month };
+            },
+
+            navigateCalendarMonth(delta) {
+                if (!this.calendarCursor) this.initCalendarCursor();
+                this.calendarCursor.month += delta;
+                if (this.calendarCursor.month < 0) { this.calendarCursor.month = 11; this.calendarCursor.year -= 1; }
+                if (this.calendarCursor.month > 11) { this.calendarCursor.month = 0; this.calendarCursor.year += 1; }
+                this.renderCalendarView();
+            },
+
+            // Aggregate stats (perfect days / avg progress / days logged / sparkline data) across the FULL prep window,
+            // independent of which single month the calendar grid is currently showing.
+            computeRangeStats(range) {
                 let perfectDaysCount = 0;
                 let activeDaysLoggedCount = 0;
                 let totalPercentageSum = 0;
                 const dailyRates = [];
 
-                // Calendar cell populator
-                for (let day = 1; day <= daysInJuly; day++) {
+                range.forEach(({ dateStr, dayNum }) => {
+                    if (scheduler.isOffDay(dateStr)) return;
+
+                    const dayTasks = scheduler.getTimelineStateForDate(dateStr);
+                    const completed = dayTasks.filter(t => t.status === 'completed' || t.status === 'skipped').length;
+                    const total = dayTasks.length;
+                    const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+                    if (percent === 100) perfectDaysCount++;
+                    if (completed > 0) activeDaysLoggedCount++;
+                    totalPercentageSum += percent;
+
+                    dailyRates.push({ dateStr, dayNum, percent });
+                });
+
+                return { perfectDaysCount, activeDaysLoggedCount, totalPercentageSum, dailyRates };
+            },
+
+            renderCalendarView() {
+                const gridEl = document.getElementById('calendar-grid');
+                if (!gridEl) return;
+                gridEl.innerHTML = '';
+
+                if (!this.calendarCursor) this.initCalendarCursor();
+
+                const activeDateString = scheduler.getDateString();
+                const range = scheduler.getDateRange();
+                const rangeByDate = {};
+                range.forEach(r => { rangeByDate[r.dateStr] = r.dayNum; });
+
+                const rangeTextEl = document.getElementById('calendar-range-text');
+                const dayFmt = { month: 'short', day: 'numeric', year: 'numeric' };
+                if (range.length > 0 && rangeTextEl) {
+                    const startD = new Date(range[0].dateStr + 'T00:00:00');
+                    const endD = new Date(range[range.length - 1].dateStr + 'T00:00:00');
+                    rangeTextEl.innerText = `${startD.toLocaleDateString('en-US', dayFmt)} – ${endD.toLocaleDateString('en-US', dayFmt)}`;
+                } else if (rangeTextEl) {
+                    rangeTextEl.innerText = 'No prep window configured';
+                }
+
+                if (range.length === 0) {
+                    gridEl.innerHTML = '<p class="col-span-7 text-center text-textSecondary italic py-4">No prep window configured in app.json.</p>';
+                    return;
+                }
+
+                const { year, month } = this.calendarCursor;
+                const labelEl = document.getElementById('calendar-month-label');
+                if (labelEl) {
+                    labelEl.innerText = new Date(year, month, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                }
+
+                // Disable nav past the configured prep window's months
+                const firstD = new Date(range[0].dateStr + 'T00:00:00');
+                const lastD = new Date(range[range.length - 1].dateStr + 'T00:00:00');
+                const prevBtn = document.getElementById('calendar-prev-month');
+                const nextBtn = document.getElementById('calendar-next-month');
+                const atFirstMonth = (year === firstD.getFullYear() && month === firstD.getMonth());
+                const atLastMonth = (year === lastD.getFullYear() && month === lastD.getMonth());
+                if (prevBtn) prevBtn.disabled = atFirstMonth;
+                if (nextBtn) nextBtn.disabled = atLastMonth;
+                if (prevBtn) prevBtn.classList.toggle('is-disabled', atFirstMonth);
+                if (nextBtn) nextBtn.classList.toggle('is-disabled', atLastMonth);
+
+                // Render just the visible month's grid
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const weekdayOffset = new Date(year, month, 1).getDay();
+
+                for (let i = 0; i < weekdayOffset; i++) {
                     const cell = document.createElement('div');
-                    const dateStr = `2026-07-${day < 10 ? '0' + day : day}`;
-                    const isPrepDay = (day >= 19 && day <= 31);
-                    
-                    if (!isPrepDay) {
+                    cell.className = 'calendar-cell calendar-cell--inactive bg-transparent border-0';
+                    gridEl.appendChild(cell);
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const cell = document.createElement('div');
+                    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const dayNum = rangeByDate[dateStr];
+                    const inPrepWindow = dayNum !== undefined;
+
+                    if (!inPrepWindow) {
                         cell.className = 'calendar-cell calendar-cell--inactive bg-appBg border border-appBorder/10 opacity-30 select-none';
                         cell.innerHTML = `<span>${day}</span>`;
+                    } else if (scheduler.isOffDay(dateStr)) {
+                        const isCurrentDay = (dateStr === activeDateString);
+                        cell.className = `calendar-cell calendar-cell--active bg-appBg border border-dashed border-appBorder text-textSecondary ${isCurrentDay ? 'calendar-cell--current' : ''}`;
+                        cell.innerHTML = `
+                            <span class="text-xs absolute top-1 left-1.5 opacity-60">${day}</span>
+                            <span class="text-[10px] font-semibold mt-3 uppercase tracking-wide opacity-70">Off</span>
+                            <div class="calendar-tooltip font-medium text-xs">
+                                Day ${dayNum} &bull; ${dateStr} &bull; Off day
+                            </div>
+                        `;
+                        cell.addEventListener('click', () => app.travelToDate(dateStr));
                     } else {
                         const dayTasks = scheduler.getTimelineStateForDate(dateStr);
                         const completed = dayTasks.filter(t => t.status === 'completed' || t.status === 'skipped').length;
                         const total = dayTasks.length;
                         const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-                        
-                        totalPrepCompleted += dayTasks.filter(t => t.status === 'completed').length;
-                        if (percent === 100) perfectDaysCount++;
-                        if (completed > 0) activeDaysLoggedCount++;
-                        totalPercentageSum += percent;
-
-                        dailyRates.push({ day, percent });
 
                         let bgClass = 'bg-appBg';
                         let borderClass = 'border-appBorder';
                         let textClass = 'text-textPrimary';
 
-                        // Graded styling depending on completion rates
                         if (percent === 100) {
                             bgClass = 'bg-statusCompleted text-white font-bold';
                         } else if (percent >= 75) {
@@ -668,7 +842,7 @@
                             <span class="text-xs absolute top-1 left-1.5 opacity-60">${day}</span>
                             <span class="text-xs font-bold mt-3">${percent}%</span>
                             <div class="calendar-tooltip font-medium text-xs">
-                                Day ${day - 18} &bull; ${percent}% logged (${completed}/${total} tasks)
+                                Day ${dayNum} &bull; ${percent}% logged (${completed}/${total} tasks)
                             </div>
                         `;
 
@@ -680,8 +854,11 @@
                     gridEl.appendChild(cell);
                 }
 
-                // Update analytical totals
+                // Aggregate analytics still reflect the FULL prep window, not just the visible month
+                const { perfectDaysCount, activeDaysLoggedCount, totalPercentageSum, dailyRates } = this.computeRangeStats(range);
                 document.getElementById('stats-perfect-days').innerText = perfectDaysCount;
+                const totalDaysEl = document.getElementById('stats-total-days');
+                if (totalDaysEl) totalDaysEl.innerText = dailyRates.length;
                 const avgProgress = dailyRates.length > 0 ? Math.round(totalPercentageSum / dailyRates.length) : 0;
                 document.getElementById('stats-avg-progress').innerText = `${avgProgress}%`;
                 document.getElementById('stats-days-logged').innerText = activeDaysLoggedCount;
@@ -694,6 +871,15 @@
                 const container = document.getElementById('stats-sparkline-bars');
                 if (!container) return;
                 container.innerHTML = '';
+
+                const startLabelEl = document.getElementById('sparkline-start-label');
+                const endLabelEl = document.getElementById('sparkline-end-label');
+                if (dailyRates.length > 0) {
+                    const first = dailyRates[0];
+                    const last = dailyRates[dailyRates.length - 1];
+                    if (startLabelEl) startLabelEl.innerText = `Day ${first.dayNum} (${first.dateStr})`;
+                    if (endLabelEl) endLabelEl.innerText = `Day ${last.dayNum} (${last.dateStr})`;
+                }
 
                 dailyRates.forEach(item => {
                     const bar = document.createElement('div');
@@ -708,26 +894,36 @@
                     bar.innerHTML = `
                         <div class="w-full ${colorClass} rounded-t" style="height: ${heightPercent}%"></div>
                         <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-[10px] py-1 px-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-30 whitespace-nowrap mb-1">
-                            Jul ${item.day}: ${item.percent}%
+                            ${item.dateStr}: ${item.percent}%
                         </div>
                     `;
                     bar.addEventListener('click', () => {
-                        app.travelToDate(`2026-07-${item.day < 10 ? '0' + item.day : item.day}`);
+                        app.travelToDate(item.dateStr);
                     });
                     container.appendChild(bar);
                 });
             },
 
             renderSelectedSyllabus() {
+                const dateStr = scheduler.getDateString();
                 const dayNum = scheduler.getDayNumber();
-                const plan = scheduler.getStudyPlanForDay(dayNum);
                 const container = document.getElementById('selected-day-syllabus');
                 if (!container) return;
 
+                if (scheduler.isOffDay(dateStr)) {
+                    container.innerHTML = `
+                        <div class="text-center py-4">
+                            <p class="text-textSecondary text-sm italic">Day ${dayNum} (${dateStr}) is an off day — no sessions scheduled.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const plan = scheduler.getStudyPlanForDate(dateStr);
                 if (!plan) {
                     container.innerHTML = `
                         <div class="text-center py-4">
-                            <p class="text-textSecondary text-sm italic">Day ${dayNum} covers mock evaluation systems & final rehearsals!</p>
+                            <p class="text-textSecondary text-sm italic">Day ${dayNum} (${dateStr}) covers mock evaluation systems & final rehearsals!</p>
                         </div>
                     `;
                     return;
@@ -736,7 +932,7 @@
                 let html = `
                     <div class="flex justify-between items-center border-b border-appBorder pb-2 mb-2">
                         <span class="text-xs font-bold text-statusCompleted uppercase tracking-wider">Plan Day ${dayNum} Target Blueprint</span>
-                        <span class="text-xs text-textSecondary">Target Date: 2026-07-${18 + dayNum}</span>
+                        <span class="text-xs text-textSecondary">Target Date: ${dateStr}</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 `;
@@ -773,7 +969,7 @@
                 if (dayBadge) {
                     const todayNum = scheduler.getDayNumber();
                     const realToday = new Date();
-                    const prepStartDate = new Date("2026-07-19T00:00:00");
+                    const prepStartDate = new Date(`${CONFIG.app.startDate}T00:00:00`);
                     
                     if (realToday < prepStartDate && scheduler.simulatedDateOffset === 0) {
                         dayBadge.innerText = `Starts Tomorrow!`;
@@ -864,20 +1060,20 @@
             },
             
             detectCurrentDate() {
+                if (!CONFIG.app.startDate || !CONFIG.app.endDate) return;
+
                 const now = new Date();
-                const startDate = new Date("2026-07-19T00:00:00");
-                const endDate = new Date("2026-07-31T23:59:59");
-                
-                // If loaded today (before the 19th), shift simulation so you start in preview on Day 1
+                const startDate = new Date(`${CONFIG.app.startDate}T00:00:00`);
+                const endDate = new Date(`${CONFIG.app.endDate}T23:59:59`);
+
+                // If loaded before the prep window starts, shift simulation so you preview Day 1
                 if (now < startDate) {
-                    console.log("Date is prior to Day 1. Enabling simulated preview range starting July 19th.");
-                    const diffTime = startDate.getTime() - now.getTime();
-                    // Set simulation offset to align exactly with July 19th at 10:00 AM
-                    const targetPreset = new Date("2026-07-19T10:00:00");
+                    console.log(`Date is prior to Day 1. Enabling simulated preview range starting ${CONFIG.app.startDate}.`);
+                    const targetPreset = new Date(`${CONFIG.app.startDate}T10:00:00`);
                     scheduler.simulatedDateOffset = targetPreset.getTime() - Date.now();
                 } else if (now > endDate) {
                     // Lock simulated time to the final prep day to keep the archive inspectable
-                    const endPreset = new Date("2026-07-31T12:00:00");
+                    const endPreset = new Date(`${CONFIG.app.endDate}T12:00:00`);
                     scheduler.simulatedDateOffset = endPreset.getTime() - Date.now();
                 }
             },
@@ -908,8 +1104,13 @@
                     let nextTask = null;
                     let foundToday = false;
 
-                    // Sort routine by chronological start time
-                    const sortedRoutine = [...CONFIG.routine].sort((a, b) => {
+                    // Sort today's routine by chronological start time
+                    const todaysRoutine = scheduler.getRoutineForDate(scheduler.getDateString());
+                    if (todaysRoutine.length === 0) {
+                        showToast("Today is an off day — nothing to fast forward to!", "info");
+                        return;
+                    }
+                    const sortedRoutine = [...todaysRoutine].sort((a, b) => {
                         return scheduler.timeToMinutes(a.start) - scheduler.timeToMinutes(b.start);
                     });
 
@@ -972,6 +1173,14 @@
                     dashboard.renderCalendarView();
                 });
 
+                // Calendar month navigation
+                document.getElementById('calendar-prev-month').addEventListener('click', () => {
+                    dashboard.navigateCalendarMonth(-1);
+                });
+                document.getElementById('calendar-next-month').addEventListener('click', () => {
+                    dashboard.navigateCalendarMonth(1);
+                });
+
                 // State Backup Utilities
                 document.getElementById('btn-export-db').addEventListener('click', () => {
                     this.exportDatabase();
@@ -1020,6 +1229,9 @@
                 // Relocate simulator timestamp to 10:00 AM of target travel date
                 const targetPreset = new Date(`${dateStr}T10:00:00`);
                 scheduler.simulatedDateOffset = targetPreset.getTime() - Date.now();
+
+                // Keep the calendar grid in sync with wherever we just jumped to
+                dashboard.calendarCursor = { year: targetPreset.getFullYear(), month: targetPreset.getMonth() };
                 
                 this.updateDashboard();
                 showToast(`Time-traveled to ${dateStr}!`);
@@ -1078,12 +1290,13 @@
                 let completedAcc = 0;
                 let skippedAcc = 0;
 
-                // Loop through active study window (July 19 to 31)
-                for (let day = 19; day <= 31; day++) {
-                    const dateStr = `2026-07-${day < 10 ? '0' + day : day}`;
+                // Loop through the active prep window as defined in app.json
+                scheduler.getDateRange().forEach(({ dateStr }) => {
+                    if (scheduler.isOffDay(dateStr)) return; // skip off days — nothing to seed
+
                     logs[dateStr] = {};
-                    
-                    CONFIG.routine.forEach(task => {
+
+                    scheduler.getRoutineForDate(dateStr).forEach(task => {
                         const roll = Math.random();
                         if (roll > 0.45) {
                             logs[dateStr][task.id] = 'completed';
@@ -1093,7 +1306,7 @@
                             skippedAcc++;
                         }
                     });
-                }
+                });
 
                 // Populate randomized mastery metrics
                 const randomWhiteboard = CONFIG.whiteboardTopics.slice(0, Math.floor(Math.random() * 8) + 3);

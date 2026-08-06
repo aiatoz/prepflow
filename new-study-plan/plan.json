@@ -1,0 +1,409 @@
+{
+  "2026-07-19": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Two Sum",
+        "Valid Anagram",
+        "Contains Duplicate"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "ER Diagram",
+      "Keys",
+      "Normalization",
+      "Joins"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Linear Regression",
+      "Gradient Descent"
+    ],
+    "application": "House Price Prediction Pipeline",
+    "revision": [
+      "Linear Regression",
+      "Optimization",
+      "Bias-Variance"
+    ],
+    "interview": [
+      "Tell Me About Yourself",
+      "Explain Your Research"
+    ]
+  },
+  "2026-07-20": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Group Anagrams",
+        "Top K Frequent Elements",
+        "Product of Array Except Self"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "NumPy",
+      "Broadcasting",
+      "Vectorization",
+      "Axis",
+      "Reshape",
+      "Einsum"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Logistic Regression"
+    ],
+    "application": "Customer Churn Prediction",
+    "revision": [
+      "Logistic Regression",
+      "Statistics",
+      "Optimization"
+    ],
+    "interview": []
+  },
+  "2026-07-21": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Two Pointers",
+      "questions": [
+        "Valid Palindrome",
+        "Two Sum II",
+        "Container With Most Water"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "GROUP BY",
+      "HAVING",
+      "ORDER BY",
+      "Window Functions"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "KNN"
+    ],
+    "application": "Recommendation System",
+    "revision": [
+      "KNN",
+      "PCA",
+      "Feature Engineering"
+    ],
+    "interview": []
+  },
+  "2026-07-22": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Sliding Window & Stack",
+      "questions": [
+        "Longest Substring Without Repeating Characters",
+        "Valid Parentheses",
+        "Min Stack"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Tensor Operations",
+      "Autograd",
+      "nn.Module",
+      "Dataset",
+      "DataLoader"
+    ],
+    "mlops": [],
+    "implementation": [
+      "KMeans"
+    ],
+    "application": "Customer Segmentation using DBSCAN",
+    "revision": [
+      "Clustering",
+      "PCA"
+    ],
+    "interview": []
+  },
+  "2026-07-23": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Binary Search",
+      "questions": [
+        "Binary Search",
+        "Search in Rotated Sorted Array",
+        "Find Minimum in Rotated Sorted Array"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "Transactions",
+      "ACID",
+      "Indexes",
+      "Locks"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Decision Tree"
+    ],
+    "application": "Fraud Detection",
+    "revision": [
+      "Decision Trees",
+      "Random Forest"
+    ],
+    "interview": []
+  },
+  "2026-07-24": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Linked Lists",
+      "questions": [
+        "Reverse Linked List",
+        "Linked List Cycle",
+        "Merge Two Sorted Lists"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Conv2D",
+      "Padding",
+      "Stride",
+      "Pooling"
+    ],
+    "mlops": [],
+    "implementation": [
+      "PCA"
+    ],
+    "application": "Image Classification Pipeline",
+    "revision": [
+      "CNN",
+      "BatchNorm"
+    ],
+    "interview": []
+  },
+  "2026-07-25": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Trees (DFS)",
+      "questions": [
+        "Maximum Depth of Binary Tree",
+        "Invert Binary Tree",
+        "Same Tree"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "SQL Practice",
+      "SQL Patterns"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Batch Normalization"
+    ],
+    "application": "Transfer Learning",
+    "revision": [
+      "Attention",
+      "Transformers"
+    ],
+    "interview": []
+  },
+  "2026-07-26": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Trees (BFS)",
+      "questions": [
+        "Binary Tree Level Order Traversal",
+        "Validate BST",
+        "Lowest Common Ancestor (Understand the approach)"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Self Attention",
+      "Multi Head Attention"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Self Attention"
+    ],
+    "application": "Mini RAG Pipeline",
+    "revision": [
+      "RAG",
+      "Embeddings",
+      "Vector Databases"
+    ],
+    "interview": []
+  },
+  "2026-07-27": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Heaps / Priority Queue",
+      "questions": [
+        "Kth Largest Element in an Array",
+        "Top K Frequent Elements (Heap Solution)",
+        "Last Stone Weight"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [
+      "Advanced SQL",
+      "CTE",
+      "Window Functions"
+    ],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "Conv2D"
+    ],
+    "application": "Object Detection Pipeline",
+    "revision": [
+      "Transformers",
+      "Mixture of Experts"
+    ],
+    "interview": []
+  },
+  "2026-07-28": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Graphs (Grid DFS/BFS)",
+      "questions": [
+        "Number of Islands",
+        "Max Area of Island",
+        "Flood Fill"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [
+      "Training Loop",
+      "Optimizers",
+      "Learning Rate Scheduler",
+      "Loss Functions"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Neural Network from Scratch"
+    ],
+    "application": "Sentiment Analysis",
+    "revision": [
+      "Backpropagation",
+      "Initialization"
+    ],
+    "interview": []
+  },
+  "2026-07-29": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Rotting Oranges",
+        "Clone Graph",
+        "Course Schedule (Optional if time permits)"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [],
+    "mlops": [
+      "Docker",
+      "MLflow",
+      "DVC"
+    ],
+    "implementation": [
+      "Random Forest"
+    ],
+    "application": "XGBoost Pipeline",
+    "revision": [
+      "Trees",
+      "Boosting"
+    ],
+    "interview": []
+  },
+  "2026-07-30": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Dynamic Programming",
+      "questions": [
+        "Climbing Stairs",
+        "House Robber",
+        "Coin Change"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "dbms": [],
+    "libraries": [],
+    "mlops": [
+      "FastAPI",
+      "Deployment",
+      "Model Serving",
+      "Monitoring"
+    ],
+    "implementation": [
+      "Revision of Previous Algorithms"
+    ],
+    "application": "ML System Design",
+    "revision": [
+      "Random Topics"
+    ],
+    "interview": []
+  },
+  "2026-07-31": {
+    "routineId": "legacy-11block",
+    "dsa": {
+      "topic": "Mock Coding Interview",
+      "questions": [
+        "DSA",
+        "SQL"
+      ]
+    },
+    "paper": "",
+    "dbms": [],
+    "libraries": [],
+    "mlops": [],
+    "implementation": [
+      "AI/ML Mock Interview"
+    ],
+    "application": "Research Interview",
+    "revision": [
+      "Research",
+      "Publications",
+      "Paper",
+      "Challenges",
+      "Contributions",
+      "Future Work"
+    ],
+    "interview": [
+      "Mock Coding Interview",
+      "AI/ML Mock Interview",
+      "Research Interview"
+    ]
+  },
+  "2026-08-06": {
+    "routineId": "core-4block",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Two Sum",
+        "Valid Anagram",
+        "Contains Duplicate"
+      ]
+    },
+    "paper": "Continue paper corrections.",
+    "revision": [
+      "Linear Regression",
+      "Bias-Variance",
+      "Optimization"
+    ],
+    "implementation": [
+      "Linear Regression",
+      "Gradient Descent"
+    ]
+  },
+  "2026-08-07": {
+    "routineId": "off"
+  }
+}
