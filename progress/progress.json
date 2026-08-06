@@ -145,7 +145,10 @@
       "whiteboard": "completed",
       "morning": "completed",
       "paper": "completed",
-      "lunch": "completed"
+      "lunch": "completed",
+      "break": "completed",
+      "implementation": "completed",
+      "dsa": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -162,10 +165,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 126,
+    "completedTasks": 129,
     "skippedTasks": 2,
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-08-06T10:07:26.886Z"
+  "exportedAt": "2026-08-06T14:41:51.714Z"
 }
