@@ -197,6 +197,15 @@
     "2026-08-14": {
       "implementation": "completed"
     },
+	"2026-08-15": {
+      "lab": "completed",
+      "paper": "completed"
+    },
+	
+	"2026-08-16": {
+      "lab": "completed",
+      "paper": "completed"
+    },
     "2026-08-17": {
       "dsa": "completed"
     }
@@ -220,5 +229,5 @@
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-08-17T10:50:08.708Z"
+  "exportedAt": "2026-08-17T10:50:12.818Z"
 }
