@@ -3,8 +3,8 @@
   "version": "v2",
   "useLegacyConfig": false,
   "startDate": "2026-07-19",
-  "endDate": "2026-08-31",
-  "totalDays": 44,
+  "endDate": "2026-09-30",
+  "totalDays": 74,
   "objective": "AI/ML Placement Preparation",
   "targetCompanies": [
     "Microsoft",
