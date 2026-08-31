@@ -882,5 +882,27 @@
     "implementation": [
       "NA"
     ]
+  },
+  
+  
+  "2026-09-01": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Longest Increasing Subsequence (#300)",
+        "Word Break (#139)",
+        "Longest Palindromic Substring (#5)",
+        "Meeting Rooms II (NeetCode Premium)"
+      ]
+    },
+    "revision": [
+      "CNN Backpropagation",
+      "Receptive Field",
+      "Dilated Convolution",
+      "1x1 Convolution"
+    ]
   }
+  
+  
 }
