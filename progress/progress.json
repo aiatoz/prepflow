@@ -228,6 +228,20 @@
     },
     "2026-08-23": {
       "dsa": "completed"
+    },
+    "2026-08-24": {
+      "dsa": "completed"
+    },
+    "2026-08-25": {
+      "dsa": "completed"
+    },
+    "2026-08-26": {
+      "dsa": "completed"
+    },
+    "2026-08-29": {
+      "whiteboard": "completed",
+      "morning": "completed",
+      "dsa": "skipped"
     }
   },
   "mastered_whiteboard": [
@@ -244,10 +258,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 174,
-    "skippedTasks": 2,
+    "completedTasks": 179,
+    "skippedTasks": 3,
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-08-24T04:52:58.172Z"
+  "exportedAt": "2026-08-31T06:57:18.972Z"
 }
