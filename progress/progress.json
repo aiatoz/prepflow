@@ -244,7 +244,10 @@
       "dsa": "skipped"
     },
     "2026-09-01": {
-      "dsa": "completed"
+      "dsa": "completed",
+      "paper": "completed",
+      "lunch": "completed",
+      "break": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -261,10 +264,10 @@
     "Feature Engineering"
   ],
   "overall_stats": {
-    "completedTasks": 180,
+    "completedTasks": 183,
     "skippedTasks": 3,
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-09-01T05:46:38.896Z"
+  "exportedAt": "2026-09-01T15:07:56.538Z"
 }
