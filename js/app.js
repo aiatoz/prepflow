@@ -863,7 +863,14 @@
                 document.getElementById('stats-avg-progress').innerText = `${avgProgress}%`;
                 document.getElementById('stats-days-logged').innerText = activeDaysLoggedCount;
 
-                this.renderSparklineChart(dailyRates);
+                // The sparkline itself is scoped to the visible month only — with a multi-month prep
+                // window (now 60+ days), cramming every bar into one narrow card squashes them to
+                // invisible slivers. Full-range trend data still feeds the cards above.
+                const monthDailyRates = dailyRates.filter(({ dateStr }) => {
+                    const d = new Date(dateStr + 'T00:00:00');
+                    return d.getFullYear() === year && d.getMonth() === month;
+                });
+                this.renderSparklineChart(monthDailyRates);
                 this.renderSelectedSyllabus();
             },
 
@@ -874,16 +881,22 @@
 
                 const startLabelEl = document.getElementById('sparkline-start-label');
                 const endLabelEl = document.getElementById('sparkline-end-label');
-                if (dailyRates.length > 0) {
-                    const first = dailyRates[0];
-                    const last = dailyRates[dailyRates.length - 1];
-                    if (startLabelEl) startLabelEl.innerText = `Day ${first.dayNum} (${first.dateStr})`;
-                    if (endLabelEl) endLabelEl.innerText = `Day ${last.dayNum} (${last.dateStr})`;
+
+                if (dailyRates.length === 0) {
+                    container.innerHTML = '<p class="text-textSecondary text-xs italic w-full text-center self-center">No active prep days this month.</p>';
+                    if (startLabelEl) startLabelEl.innerText = '';
+                    if (endLabelEl) endLabelEl.innerText = '';
+                    return;
                 }
+
+                const first = dailyRates[0];
+                const last = dailyRates[dailyRates.length - 1];
+                if (startLabelEl) startLabelEl.innerText = `Day ${first.dayNum} (${first.dateStr})`;
+                if (endLabelEl) endLabelEl.innerText = `Day ${last.dayNum} (${last.dateStr})`;
 
                 dailyRates.forEach(item => {
                     const bar = document.createElement('div');
-                    bar.className = 'flex-1 group relative flex flex-col justify-end h-full cursor-pointer';
+                    bar.className = 'flex-1 group relative flex flex-col justify-end h-full cursor-pointer min-w-[3px]';
                     const heightPercent = Math.max(item.percent, 6);
                     
                     let colorClass = 'bg-appBorder';
