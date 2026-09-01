@@ -883,26 +883,637 @@
       "NA"
     ]
   },
-  
-  
   "2026-09-01": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Bit Manipulation",
+      "questions": [
+        "Bit tricks: AND/OR/XOR/NOT (check odd/even, swap w/o temp)",
+        "Single Number (#136)",
+        "Number of 1 Bits (#191)",
+        "Counting Bits (#338)",
+        "Missing Number (#268) - via XOR"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "25_Probability_Foundations",
+      "26_Statistical_Inference_and_AB_Testing"
+    ],
+    "revision": [
+      "Linear Regression",
+      "Optimization",
+      "Bias-Variance"
+    ]
+  },
+  "2026-09-02": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Bit Manipulation + Trie",
+      "questions": [
+        "Sum of Two Integers without +/- (#371)",
+        "Reverse Bits (#190)",
+        "Trie node structure (children map/array, isEndOfWord)",
+        "Implement Trie (#208)",
+        "Design Add and Search Words Data Structure (#211)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "27_Linear_Algebra",
+      "28_Calculus_for_ML"
+    ],
+    "revision": [
+      "Logistic Regression",
+      "Statistics",
+      "Optimization"
+    ]
+  },
+  "2026-09-03": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Trie + Backtracking",
+      "questions": [
+        "Word Search II (#212) - Trie + backtracking",
+        "Subsets (#78)",
+        "Subsets II (#90) - with duplicates",
+        "Permutations (#46)",
+        "Permutations II (#47) - with duplicates"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "29_Regularization",
+      "30_Optimization"
+    ],
+    "revision": [
+      "KNN",
+      "PCA",
+      "Feature Engineering"
+    ]
+  },
+  "2026-09-04": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Backtracking",
+      "questions": [
+        "Combination Sum (#39)",
+        "Combination Sum II (#40)",
+        "Word Search (#79)",
+        "N-Queens (#51) - conceptual",
+        "Palindrome Partitioning (#131)"
+      ]
+    },
+    "new_concepts": [
+      "31_Generative_Models",
+      "32_Prompt_Engineering"
+    ],
+    "revision": [
+      "Clustering",
+      "PCA"
+    ]
+  },
+  "2026-09-05": {
     "routineId": "researchDay",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Contains Duplicate (#217)",
+        "Valid Anagram (#242)",
+        "Two Sum (#1)",
+        "Group Anagrams (#49)",
+        "Top K Frequent Elements (#347)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "Decision Trees",
+      "Random Forest"
+    ]
+  },
+  "2026-09-06": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Valid Palindrome (#125)",
+        "Two Sum II (#167)",
+        "3Sum (#15)",
+        "Container With Most Water (#11)",
+        "Trapping Rain Water (#42)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "CNN",
+      "BatchNorm"
+    ]
+  },
+  "2026-09-07": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Binary Search (#704)",
+        "Search a 2D Matrix (#74)",
+        "Koko Eating Bananas (#875)",
+        "Find Minimum in Rotated Sorted Array (#153)",
+        "Search in Rotated Sorted Array (#33)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "33_ChromaDB",
+      "34_MLOps_FastAPI_Docker_MLflow_DVC_CICD"
+    ],
+    "revision": [
+      "Attention",
+      "Transformers"
+    ]
+  },
+  "2026-09-08": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Invert Binary Tree (#226)",
+        "Maximum Depth of Binary Tree (#104)",
+        "Diameter of Binary Tree (#543)",
+        "Balanced Binary Tree (#110)",
+        "Same Tree (#100)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "35_ML_System_Design_Framework",
+      "36_ML_System_Design_Worked_Examples"
+    ],
+    "revision": [
+      "RAG",
+      "Embeddings",
+      "Vector Databases"
+    ]
+  },
+  "2026-09-09": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Number of Islands (#200)",
+        "Clone Graph (#133)",
+        "Max Area of Island (#695)",
+        "Pacific Atlantic Water Flow (#417)",
+        "Surrounded Regions (#130)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "37_Business_Case_Studies"
+    ],
+    "revision": [
+      "Transformers",
+      "Mixture of Experts"
+    ]
+  },
+  "2026-09-10": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Climbing Stairs (#70)",
+        "Min Cost Climbing Stairs (#746)",
+        "House Robber (#198)",
+        "House Robber II (#213)",
+        "Longest Palindromic Substring (#5)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Project Deep-Dive: VQA project (fusion choice, PEFT tradeoffs, quantization impact)"
+    ],
+    "revision": [
+      "Backpropagation",
+      "Initialization"
+    ]
+  },
+  "2026-09-11": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Encode and Decode Strings (#271)",
+        "Product of Array Except Self (#238)",
+        "Valid Sudoku (#36)",
+        "Longest Consecutive Sequence (#128)",
+        "Contains Duplicate (#217)"
+      ]
+    },
+    "new_concepts": [
+      "Project Deep-Dive: RAG system (embeddings, ChromaDB+HNSW, quantized Phi 3.5, retrieval eval)"
+    ],
+    "revision": [
+      "Trees",
+      "Boosting"
+    ]
+  },
+  "2026-09-12": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Best Time to Buy and Sell Stock (#121)",
+        "Longest Substring Without Repeating Characters (#3)",
+        "Longest Repeating Character Replacement (#424)",
+        "Permutation in String (#567)",
+        "Minimum Window Substring (#76)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "Random Topics"
+    ]
+  },
+  "2026-09-13": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Time Based Key-Value Store (#981)",
+        "Median of Two Sorted Arrays (#4)",
+        "Reverse Linked List (#206)",
+        "Merge Two Sorted Lists (#21)",
+        "Reorder List (#143)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "Research",
+      "Publications",
+      "Paper",
+      "Challenges",
+      "Contributions",
+      "Future Work"
+    ]
+  },
+  "2026-09-14": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Subtree of Another Tree (#572)",
+        "Lowest Common Ancestor of a BST (#235)",
+        "Binary Tree Level Order Traversal (#102)",
+        "Binary Tree Right Side View (#199)",
+        "Count Good Nodes in Binary Tree (#1448)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Project Deep-Dive: LiDAR scoping review paper (gaps, roads-as-priors approach)"
+    ],
+    "revision": [
+      "Linear Regression",
+      "Optimization",
+      "Bias-Variance"
+    ]
+  },
+  "2026-09-15": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Rotting Oranges (#994)",
+        "Walls and Gates (Premium)",
+        "Course Schedule (#207)",
+        "Course Schedule II (#210)",
+        "Redundant Connection (#684)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Project Deep-Dive: HybriDTVis paper (LOD1, road geometry, ALS vs MLS generalizability)"
+    ],
+    "revision": [
+      "Logistic Regression",
+      "Statistics",
+      "Optimization"
+    ]
+  },
+  "2026-09-16": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Palindromic Substrings (#647)",
+        "Decode Ways (#91)",
+        "Coin Change (#322)",
+        "Maximum Product Subarray (#152)",
+        "Word Break (#139)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Project Deep-Dive: Uncertainty-aware segmentation (uncertainty as feature, custom loss, mIoU gains)"
+    ],
+    "revision": [
+      "KNN",
+      "PCA",
+      "Feature Engineering"
+    ]
+  },
+  "2026-09-17": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Valid Anagram (#242)",
+        "Two Sum (#1)",
+        "Group Anagrams (#49)",
+        "Top K Frequent Elements (#347)",
+        "Encode and Decode Strings (#271)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "ML System Design Practice: Recommendation System end-to-end"
+    ],
+    "revision": [
+      "Clustering",
+      "PCA"
+    ]
+  },
+  "2026-09-18": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Sliding Window Maximum (#239)",
+        "Valid Parentheses (#20)",
+        "Min Stack (#155)",
+        "Evaluate Reverse Polish Notation (#150)",
+        "Generate Parentheses (#22)"
+      ]
+    },
+    "new_concepts": [
+      "ML System Design Practice: Fraud Detection end-to-end"
+    ],
+    "revision": [
+      "Decision Trees",
+      "Random Forest"
+    ]
+  },
+  "2026-09-19": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "Remove Nth Node From End of List (#19)",
+        "Copy List with Random Pointer (#138)",
+        "Add Two Numbers (#2)",
+        "Linked List Cycle (#141)",
+        "Find the Duplicate Number (#287)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "CNN",
+      "BatchNorm"
+    ]
+  },
+  "2026-09-20": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Validate Binary Search Tree (#98)",
+        "Kth Smallest Element in a BST (#230)",
+        "Construct Binary Tree from Preorder and Inorder (#105)",
+        "Binary Tree Maximum Path Sum (#124)",
+        "Serialize and Deserialize Binary Tree (#297)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "Attention",
+      "Transformers"
+    ]
+  },
+  "2026-09-21": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Number of Connected Components (Premium)",
+        "Graph Valid Tree (Premium)",
+        "Word Ladder (#127)",
+        "Reconstruct Itinerary (#332)",
+        "Min Cost to Connect All Points (#1584)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "ML System Design Practice: Search Ranking system"
+    ],
+    "revision": [
+      "RAG",
+      "Embeddings",
+      "Vector Databases"
+    ]
+  },
+  "2026-09-22": {
+    "routineId": "septemberDay",
     "dsa": {
       "topic": "Dynamic Programming + Mixed",
       "questions": [
         "Longest Increasing Subsequence (#300)",
-        "Word Break (#139)",
-        "Longest Palindromic Substring (#5)",
-        "Meeting Rooms II (NeetCode Premium)"
+        "Partition Equal Subset Sum (#416)",
+        "Unique Paths (#62)",
+        "Longest Common Subsequence (#1143)",
+        "Best Time to Buy/Sell Stock w/ Cooldown (#309)"
       ]
     },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "ML System Design Practice: Feed / Ads ranking (optional, large-co style)"
+    ],
     "revision": [
-      "CNN Backpropagation",
-      "Receptive Field",
-      "Dilated Convolution",
-      "1x1 Convolution"
+      "Transformers",
+      "Mixture of Experts"
+    ]
+  },
+  "2026-09-23": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Product of Array Except Self (#238)",
+        "Valid Sudoku (#36)",
+        "Longest Consecutive Sequence (#128)",
+        "Contains Duplicate (#217)",
+        "Valid Anagram (#242)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Behavioral Bank: Tell me about yourself + Why leave SDE/CRM for ML"
+    ],
+    "revision": [
+      "Backpropagation",
+      "Initialization"
+    ]
+  },
+  "2026-09-24": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "Daily Temperatures (#739)",
+        "Car Fleet (#853)",
+        "Largest Rectangle in Histogram (#84)",
+        "Valid Palindrome (#125)",
+        "Two Sum II (#167)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Behavioral Bank: Why this company/role + Biggest failure & lesson"
+    ],
+    "revision": [
+      "Trees",
+      "Boosting"
+    ]
+  },
+  "2026-09-25": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Binary Search + Linked Lists",
+      "questions": [
+        "LRU Cache (#146)",
+        "Merge k Sorted Lists (#23)",
+        "Reverse Nodes in k-Group (#25)",
+        "Binary Search (#704)",
+        "Search a 2D Matrix (#74)"
+      ]
+    },
+    "new_concepts": [
+      "Behavioral Bank: Conflict with a teammate + Leadership example (mentoring at Speridian)"
+    ],
+    "revision": [
+      "Random Topics"
+    ]
+  },
+  "2026-09-26": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Trees + Heap",
+      "questions": [
+        "Kth Largest Element in a Stream (#703)",
+        "Last Stone Weight (#1046)",
+        "K Closest Points to Origin (#973)",
+        "Kth Largest Element in an Array (#215)",
+        "Task Scheduler (#621)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "Research",
+      "Publications",
+      "Paper",
+      "Challenges",
+      "Contributions",
+      "Future Work"
+    ]
+  },
+  "2026-09-27": {
+    "routineId": "researchDay",
+    "dsa": {
+      "topic": "Graphs",
+      "questions": [
+        "Network Delay Time (#743)",
+        "Swim in Rising Water (#778)",
+        "Alien Dictionary (Premium)",
+        "Cheapest Flights Within K Stops (#787)",
+        "Number of Islands (#200)"
+      ]
+    },
+    "lab": "Thesis experiments / lab work for the current research phase.",
+    "paper": "Write up results, figures, or corrections.",
+    "revision": [
+      "Linear Regression",
+      "Optimization",
+      "Bias-Variance"
+    ]
+  },
+  "2026-09-28": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Dynamic Programming + Mixed",
+      "questions": [
+        "Coin Change II (#518)",
+        "Target Sum (#494)",
+        "Interleaving String (#97)",
+        "Longest Increasing Path in a Matrix (#329)",
+        "Distinct Subsequences (#115)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Behavioral Bank: Learning fast under pressure + Research-to-industry framing (MLOps proof)"
+    ],
+    "revision": [
+      "Logistic Regression",
+      "Statistics",
+      "Optimization"
+    ]
+  },
+  "2026-09-29": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Arrays & Hashing",
+      "questions": [
+        "Two Sum (#1)",
+        "Group Anagrams (#49)",
+        "Top K Frequent Elements (#347)",
+        "Encode and Decode Strings (#271)",
+        "Product of Array Except Self (#238)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Mock Interview Consolidation: rehearse all 5 project deep-dives + behavioral bank out loud"
+    ],
+    "revision": [
+      "KNN",
+      "PCA",
+      "Feature Engineering"
+    ]
+  },
+  "2026-09-30": {
+    "routineId": "septemberDay",
+    "dsa": {
+      "topic": "Two Pointers + Sliding Window",
+      "questions": [
+        "3Sum (#15)",
+        "Container With Most Water (#11)",
+        "Trapping Rain Water (#42)",
+        "Best Time to Buy and Sell Stock (#121)",
+        "Longest Substring Without Repeating Characters (#3)"
+      ]
+    },
+    "paper": "Research paper / thesis writing and experiments.",
+    "new_concepts": [
+      "Project Deep-Dive: VQA project (fusion choice, PEFT tradeoffs, quantization impact)"
+    ],
+    "revision": [
+      "Clustering",
+      "PCA"
     ]
   }
-  
-  
 }

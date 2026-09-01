@@ -151,14 +151,14 @@
     "name": "Off Day",
     "desc": "No sessions scheduled. Rest / catch-up day.",
     "schedule": [
-	  {
+      {
         "id": "dsa",
         "start": "09:00",
         "end": "11:30",
         "name": "DSA",
         "desc": "Data Structures & Algorithms practice."
       }
-	]
+    ]
   },
   "deepWorkTimetable": {
     "id": "deepWorkTimetable",
@@ -318,6 +318,55 @@
         "end": "17:30",
         "name": "Small Implementation",
         "desc": "Minor coding task, refactoring or experiment."
+      }
+    ]
+  },
+  "septemberDay": {
+    "id": "septemberDay",
+    "name": "September Prep Day",
+    "desc": "Core September routine: DSA + Paper/Thesis in the morning, New Concepts + Revision in the afternoon. Ends by 20:00 to allow wind-down before a 21:00-21:30 sleep.",
+    "schedule": [
+      {
+        "id": "dsa",
+        "start": "09:00",
+        "end": "11:30",
+        "name": "DSA",
+        "desc": "NeetCode 150 practice \u2014 5 questions from the day's topic."
+      },
+      {
+        "id": "paper",
+        "start": "11:45",
+        "end": "13:00",
+        "name": "Paper / Thesis",
+        "desc": "Research paper writing, corrections or thesis work."
+      },
+      {
+        "id": "lunch",
+        "start": "13:00",
+        "end": "14:00",
+        "name": "Lunch + Break",
+        "desc": "Lunch and rest."
+      },
+      {
+        "id": "new_concepts",
+        "start": "14:00",
+        "end": "17:30",
+        "name": "New Concepts",
+        "desc": "Deep-dive into a new topic from the AI/ML placement prep checklist (3.5 hrs)."
+      },
+      {
+        "id": "break",
+        "start": "17:30",
+        "end": "18:00",
+        "name": "Break",
+        "desc": "Short walk / tea break."
+      },
+      {
+        "id": "revision",
+        "start": "18:00",
+        "end": "20:00",
+        "name": "Revision",
+        "desc": "Spaced-repetition revision of previously covered concepts."
       }
     ]
   }

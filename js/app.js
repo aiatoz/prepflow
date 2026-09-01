@@ -982,7 +982,7 @@
                 
                 const timeDisplay = document.querySelector('#current-focus .focus-time');
                 if (timeDisplay) {
-                    timeDisplay.innerText = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+                    timeDisplay.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
                 }
             }
         };
@@ -1336,6 +1336,7 @@
             },
             
             startTimer() {
+                if (this.timer) clearInterval(this.timer); // avoid stacking duplicate clocks on re-init
                 this.timer = setInterval(() => {
                     dashboard.updateHeader();
                     dashboard.renderTimeline();
