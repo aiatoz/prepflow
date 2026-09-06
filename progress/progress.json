@@ -275,7 +275,9 @@
       "break": "completed"
     },
     "2026-09-05": {
-      "dsa": "completed"
+      "dsa": "completed",
+	  "lab": "completed",
+      "paper": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -297,5 +299,5 @@
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-09-05T05:44:15.707Z"
+  "exportedAt": "2026-09-06T04:38:09.303Z"
 }
