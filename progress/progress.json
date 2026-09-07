@@ -272,12 +272,14 @@
       "lunch": "completed",
       "paper": "completed",
       "new_concepts": "completed",
-      "break": "completed"
+      "break": "completed",
+	  "revision": "completed"
     },
     "2026-09-05": {
       "dsa": "completed",
       "lab": "completed",
-      "paper": "completed"
+      "paper": "completed",
+	  "revision": "completed"
     },
     "2026-09-06": {
       "dsa": "completed",
@@ -307,5 +309,5 @@
     "whiteboardCompleted": 5,
     "revisionCompleted": 4
   },
-  "exportedAt": "2026-09-07T06:32:35.697Z"
+  "exportedAt": "2026-09-07T08:05:38.020Z"
 }
