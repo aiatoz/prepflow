@@ -369,5 +369,68 @@
         "desc": "Spaced-repetition revision of previously covered concepts."
       }
     ]
+  },
+  "oaSprintDay": {
+    "id": "oaSprintDay",
+    "name": "OA Sprint Day (temporary, weekdays only)",
+    "desc": "Short-term override of septemberDay while closing specific OA gaps: monotonic stack, hard binary search, graphs, and a daily protected DP block. Revert to septemberDay once these stabilize.",
+    "schedule": [
+      {
+        "id": "dsa_pattern",
+        "start": "09:00",
+        "end": "10:15",
+        "name": "DSA - Weak Pattern Drill",
+        "desc": "Rotates through the specific gap for the day: monotonic stack, binary search on rotated/modified arrays, or graph BFS/topological sort/Union-Find. Skip topics already solid (arrays, hashmaps, basic two pointers, linked lists, basic trees, trie, bitwise)."
+      },
+      {
+        "id": "dsa_dp",
+        "start": "10:15",
+        "end": "11:30",
+        "name": "DP Deep Work",
+        "desc": "Daily, non-negotiable. Brute-force recursion first, then add memoization only. No tabulation until recursion+memo is fluent."
+      },
+      {
+        "id": "paper",
+        "start": "11:45",
+        "end": "13:00",
+        "name": "Paper / Thesis",
+        "desc": "Research paper writing, corrections or thesis work."
+      },
+      {
+        "id": "lunch",
+        "start": "13:00",
+        "end": "14:00",
+        "name": "Lunch + Break",
+        "desc": "Lunch and rest."
+      },
+      {
+        "id": "new_concepts",
+        "start": "14:00",
+        "end": "15:00",
+        "name": "Behavioral / Concept Wrap-up",
+        "desc": "Trimmed block - ML foundations are already covered; use for behavioral bank and mock-interview consolidation only."
+      },
+      {
+        "id": "break",
+        "start": "15:00",
+        "end": "15:30",
+        "name": "Break",
+        "desc": "Short walk / tea break."
+      },
+      {
+        "id": "mock_oa",
+        "start": "15:30",
+        "end": "17:00",
+        "name": "Timed Mock OA",
+        "desc": "Closed-book, timed (60-90 min), 2 problems, mixed patterns. Simulates real OA pressure and surfaces which pattern still breaks under time."
+      },
+      {
+        "id": "revision",
+        "start": "17:15",
+        "end": "18:15",
+        "name": "Light Revision",
+        "desc": "Short spaced-repetition pass. Day ends earlier than septemberDay to protect recovery time and wind-down."
+      }
+    ]
   }
 }

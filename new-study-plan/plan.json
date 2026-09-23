@@ -1348,15 +1348,14 @@
     ]
   },
   "2026-09-23": {
-    "routineId": "septemberDay",
+    "routineId": "oaSprintDay",
     "dsa": {
-      "topic": "Arrays & Hashing",
+      "topic": "Monotonic Stack (correcting the earlier mislabel under 'Two Pointers')",
       "questions": [
-        "Product of Array Except Self (#238)",
-        "Valid Sudoku (#36)",
-        "Longest Consecutive Sequence (#128)",
-        "Contains Duplicate (#217)",
-        "Valid Anagram (#242)"
+        "Daily Temperatures (#739)",
+        "Next Greater Element I (#496)",
+        "Car Fleet (#853)",
+        "Online Stock Span (#901)"
       ]
     },
     "paper": "Research paper / thesis writing and experiments.",
@@ -1366,18 +1365,21 @@
     "revision": [
       "Backpropagation",
       "Initialization"
+    ],
+    "dp_drill": [
+      "Climbing Stairs (#70) - brute-force recursion first, then add memoization",
+      "House Robber (#198) - brute-force recursion first, then add memoization"
     ]
   },
   "2026-09-24": {
-    "routineId": "septemberDay",
+    "routineId": "oaSprintDay",
     "dsa": {
-      "topic": "Two Pointers + Sliding Window",
+      "topic": "Monotonic Stack (hard) + Grid BFS (separate from grid DFS, which is already solid)",
       "questions": [
-        "Daily Temperatures (#739)",
-        "Car Fleet (#853)",
         "Largest Rectangle in Histogram (#84)",
-        "Valid Palindrome (#125)",
-        "Two Sum II (#167)"
+        "Trapping Rain Water (#42) - via the stack approach",
+        "Rotting Oranges (#994) - must be BFS, not DFS",
+        "Shortest Path in Binary Matrix (#1091) - BFS"
       ]
     },
     "paper": "Research paper / thesis writing and experiments.",
@@ -1387,18 +1389,22 @@
     "revision": [
       "Trees",
       "Boosting"
+    ],
+    "dp_drill": [
+      "Coin Change (#322)",
+      "Coin Change II (#518) - counting variant"
     ]
   },
   "2026-09-25": {
-    "routineId": "septemberDay",
+    "routineId": "oaSprintDay",
     "dsa": {
-      "topic": "Binary Search + Linked Lists",
+      "topic": "Binary Search - Rotated & Modified Arrays",
       "questions": [
-        "LRU Cache (#146)",
-        "Merge k Sorted Lists (#23)",
-        "Reverse Nodes in k-Group (#25)",
-        "Binary Search (#704)",
-        "Search a 2D Matrix (#74)"
+        "Search in Rotated Sorted Array (#33)",
+        "Search in Rotated Sorted Array II (#81) - with duplicates",
+        "Find Minimum in Rotated Sorted Array (#153)",
+        "Find Peak Element (#162)",
+        "Koko Eating Bananas (#875) - binary search on the answer"
       ]
     },
     "new_concepts": [
@@ -1406,6 +1412,10 @@
     ],
     "revision": [
       "Random Topics"
+    ],
+    "dp_drill": [
+      "Longest Increasing Subsequence (#300)",
+      "Longest Common Subsequence (#1143)"
     ]
   },
   "2026-09-26": {
@@ -1452,15 +1462,14 @@
     ]
   },
   "2026-09-28": {
-    "routineId": "septemberDay",
+    "routineId": "oaSprintDay",
     "dsa": {
-      "topic": "Dynamic Programming + Mixed",
+      "topic": "Graphs - BFS, Topological Sort, Union-Find",
       "questions": [
-        "Coin Change II (#518)",
-        "Target Sum (#494)",
-        "Interleaving String (#97)",
-        "Longest Increasing Path in a Matrix (#329)",
-        "Distinct Subsequences (#115)"
+        "Course Schedule (#207) - topological sort",
+        "Course Schedule II (#210)",
+        "Redundant Connection (#684) - Union-Find",
+        "Word Ladder (#127) - BFS"
       ]
     },
     "paper": "Research paper / thesis writing and experiments.",
@@ -1471,18 +1480,19 @@
       "Logistic Regression",
       "Statistics",
       "Optimization"
+    ],
+    "dp_drill": [
+      "Edit Distance (#72)",
+      "Partition Equal Subset Sum (#416) - 0/1 knapsack"
     ]
   },
   "2026-09-29": {
-    "routineId": "septemberDay",
+    "routineId": "oaSprintDay",
     "dsa": {
-      "topic": "Arrays & Hashing",
+      "topic": "Timed Mock OA #1 - mixed patterns, cold (don't pre-read the problems)",
       "questions": [
-        "Two Sum (#1)",
-        "Group Anagrams (#49)",
-        "Top K Frequent Elements (#347)",
-        "Encode and Decode Strings (#271)",
-        "Product of Array Except Self (#238)"
+        "2 medium problems from a timed platform (LeetCode random-medium, InterviewBit mock, or college OA tool), 60-90 min, closed-book",
+        "Log afterward: which pattern broke under time pressure"
       ]
     },
     "paper": "Research paper / thesis writing and experiments.",
@@ -1493,18 +1503,19 @@
       "KNN",
       "PCA",
       "Feature Engineering"
+    ],
+    "dp_drill": [
+      "Word Break (#139)",
+      "Unique Paths (#62)"
     ]
   },
   "2026-09-30": {
-    "routineId": "septemberDay",
+    "routineId": "oaSprintDay",
     "dsa": {
-      "topic": "Two Pointers + Sliding Window",
+      "topic": "Timed Mock OA #2 + revisit whichever pattern broke in Mock #1",
       "questions": [
-        "3Sum (#15)",
-        "Container With Most Water (#11)",
-        "Trapping Rain Water (#42)",
-        "Best Time to Buy and Sell Stock (#121)",
-        "Longest Substring Without Repeating Characters (#3)"
+        "2 more medium problems, timed, cold",
+        "Re-attempt (untimed) whichever pattern felt shakiest on Sept 29"
       ]
     },
     "paper": "Research paper / thesis writing and experiments.",
@@ -1514,6 +1525,10 @@
     "revision": [
       "Clustering",
       "PCA"
+    ],
+    "dp_drill": [
+      "Target Sum (#494)",
+      "Decode Ways (#91)"
     ]
   }
 }
